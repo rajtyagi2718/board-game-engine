@@ -1,0 +1,12 @@
+## dir struct ##
+board-game-engine
+  board_games
+    base_classes
+    tic_tac_toe
+    connect_four
+    checkers
+    chess
+    go
+  tests 
+    test_main.py
+    test_base.py
