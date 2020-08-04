@@ -15,6 +15,19 @@ class Agent:
         """
         return self._name + ' ' + repr(self._search) + ' ' + repr(self._record)
 
+    def act(self, game):
+        """Return action to take in game.
+
+        Args
+        ----
+        game - Game
+
+        Return
+        ------
+        action : tuple
+
+        """
+
     def clear(self):
         """Reset to initial state."""
         self._search.clear()
