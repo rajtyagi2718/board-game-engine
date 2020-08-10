@@ -3,35 +3,25 @@ from board_games.base_class.board import get_winners, get_hashes, Board
 """
 indices
 -------
-[0 1 2]
-[3 4 5]
-[6 7 8]
-
+[ 0  1  2  3  4  5  6  7  8]
+[ 9 10 11 12 13 14 15 16 17]
+...
+[72 73 74 75 76 77 78 79 80]
 """
 
 PIECES = ('.', 'x', 'o')
+ROWS = tuple(slice(i, i+9) for i in range(0, 81, 9))
+HASHES = get_hashes(3, 81)
 
-SLICES = []
-for i in range(0, 9, 3):  # rows
-    SLICES.append(slice(i, i+3))
-ROWS = tuple(SLICES)
-for j in range(3):  # columns
-    SLICES.append(slice(j, 9, 3))
-SLICES.extend((slice(0, 9, 4), slice(2, 8, 2)))  # diagonals
-WINNERS = get_winners(9, SLICES)
-del SLICES
-HASHES = get_hashes(3, 9)
-
-class TicTacToeBoard(Board):
+class GoBoard(Board):
 
     _pieces = PIECES  # strs
     _rows = ROWS  # slices
-    _winners = WINNERS  # tuples
     _hashes = HASHES  # ints
 
     def __init__(self):
-        super().__init__(9)
-        self._legal_actions = set(range(9))
+        super().__init__(81)
+        self._legal_actions = set(range(81))
 
     def legal_actions(self):
         return tuple(self._legal_actions)
@@ -40,20 +30,7 @@ class TicTacToeBoard(Board):
         return action in self._legal_actions
 
     def check_winner(self):
-        # agent takes at least 3 turns to win 
-        if len(self) < 5:
-            return
-
-        # last agent to take turn can win
-        oth = self.other()
-        for slc in self._winners[self[-1]]:
-            if self._board[slc[0]] == oth and self._board[slc[1]] == oth:
-                self.winner = oth
-                break
-
-        # full board without winner is draw
-        if len(self) == 9:
-            self.winner = 0
+        pass
 
     def append(self, action):
         assert self.legal(action), (
@@ -80,7 +57,7 @@ class TicTacToeBoard(Board):
     def clear(self):
         self._board[:] = 0
         self._actions.clear()
-        self._legal_actions = set(range(9))
+        self._legal_actions = set(range(81))
         self._hash_value = 0
         self.winner = None
 
@@ -93,9 +70,15 @@ class TicTacToeBoard(Board):
 
         Examples
         --------
-        [0 0 0]    [0 1 0]    [1 1 2]
-        [0 0 0]    [2 2 0]    [2 2 1]
-        [0 0 0]    [1 2 1]    [1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [0 1 0 0 0 0 1 1 2]
+        [0 0 0 0 0 0 0 0 0]    [2 2 0 0 0 0 2 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
+        [0 0 0 0 0 0 0 0 0]    [1 2 1 0 0 0 1 2 1]
 
         """
         return '\n'.join(str(self._board[row]) for row in self._rows)
@@ -106,17 +89,23 @@ class TicTacToeBoard(Board):
 
         Examples
         --------
-        ///////////    ///////////     ///////////
-        // . . . //    // . x . //     // x x o //
-        // . . . //    // o o . //     // o o x //
-        // . . . //    // x o x //     // x o x //
-        ///////////    ///////////     ///////////
+        ///////////////////////    ///////////////////////
+        // ..... . . . ..... //    // . x . . . . x x o //
+        // . . . . . . ..... //    // o o . . . . o o x //
+        // ..... . . . ..... //    // x o x . . . x o x //
+        // . . . ..... . . . //    // x o x . . . x o x //
+        // . . . ..... . . . //    // x o x . . . x o x //
+        // . . . ..... . . . //    // x o x . . . x o x //
+        // ..... . . . ..... //    // x o x . . . x o x //
+        // ..... . . . ..... //    // x o x . . . x o x //
+        // ..... . . . ..... //    // x o x . . . x o x //
+        ///////////////////////    ///////////////////////
         """
-        result = '/'*11 + '\n'
+        result = '/'*23 + '\n'
         for row in self._rows:
             line = '// '
             line += ' '.join(self._pieces[actn] for actn in self._board[row])
             line += ' //'
             result += line + '\n'
-        result += '/'*11
+        result += '/'*23
         return result

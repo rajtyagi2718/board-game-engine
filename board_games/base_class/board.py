@@ -1,8 +1,60 @@
+from abc import ABC, abstractmethod
 import numpy as np
 
-class Board:
+def get_winners(size, slices):
+    """Return subset of indices for each possible winning slice.
+    
+    Args
+    ----
+    size - int
+    slices - list(slice)
 
-    pieces = ()  # str for each piece, called by __str__
+    Return
+    ------
+    tuple(tuple(tuple(slice)))
+        
+    Example
+    -------
+    3-in-a-row
+    [0 1 2]  (2)  row     (0, 1)
+    [3 4 5]  -->  col --> (5, 8)
+    [6 7 8]       dia     (4, 6) 
+
+    """
+    tpl = tuple(range(size))
+    winners = [[] for _ in range(size)]
+    for slc in slices:
+        ts = tpl[slc] 
+        for x in ts:
+            winners[x].append(tuple(y for y in ts if y != x))
+    return tuple(tuple(slicess) for slicess in winners)
+
+def get_hashes(num_pieces, size):
+    """Return hash array. Multiples of num_pieces.
+
+    Args
+    ----
+    num_pieces - int
+    size - int
+
+    Return
+    ------
+    tuple
+
+    >>> get_hashes(3, 5)
+    >>> [1, 3, 9, 81, 727]
+    
+    """
+    hashes = [1]
+    for _ in range(1, size):
+        hashes.append(hashes[-1] * num_pieces)
+    return tuple(hashes)
+
+class Board(ABC):
+
+    _pieces = ()  # tuple of strs for each piece, called by __str__, __hash__
+    _rows = ()    # tuple of slices, called by __repr__, __str__
+    _hashes = ()  # tuple of ints, called by append, pop
 
     def __init__(self, size):
         """Construct board as flat array of length size.
@@ -12,12 +64,14 @@ class Board:
         size - int
         
         """
-        # unsigned int < 256, numpy very flexible
+        self._size = size
+        # unsigned int < 256, numpy array very flexible
         self._board = np.zeros(size, dtype='uint8')
         self._actions = []
         self._hash_value = 0
         self.winner = None
 
+    @abstractmethod
     def legal_actions(self):
         """Return all possible legal actions for current agent.
 
@@ -27,6 +81,7 @@ class Board:
 
         """
 
+    @abstractmethod
     def legal(self, action):
         """Assess if current agent can take action.
 
@@ -57,6 +112,11 @@ class Board:
         except IndexError:
             return None
 
+    @abstractmethod
+    def check_winner(self):
+        """Determine if board is terminal (win, loss, or draw) or not."""
+
+    @abstractmethod
     def append(self, action):
         """Have current agent take action.
 
@@ -66,6 +126,7 @@ class Board:
 
         """
 
+    @abstractmethod
     def pop(self):
         """Undo last action. Return the action.
 
@@ -75,6 +136,7 @@ class Board:
         
         """
 
+    @abstractmethod
     def clear(self):
         """Reset to starting board."""
 
@@ -121,6 +183,11 @@ class Board:
             return -1
         return 0
 
+    @classmethod
+    def hash_calc(cls, piece, position):
+        """Return hash value to place piece at position on board."""
+        return piece * cls._hashes[position]
+
     def __hash__(self):
         """Return (nearly) unique value identifying board state.
 
@@ -141,9 +208,7 @@ class Board:
         """
         return hash(self) == hash(other)
 
-    def __str__(self):
-        """Return string for command line interface."""
-
+    @abstractmethod
     def __repr__(self):
         """Return 2d matrix.
 
@@ -155,3 +220,7 @@ class Board:
             [ am0 ... amn ] 
 
         """
+
+    @abstractmethod
+    def __str__(self):
+        """Return string for command line interface."""

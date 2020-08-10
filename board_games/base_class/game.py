@@ -22,8 +22,8 @@ class Game:
         str
 
         """
-        return (self._name + ': ' + repr(self._agent1) + ' vs ' + 
-                repr(self._agent2) + '\n' + repr(self._board))
+        return (self._name + ': ' + str(self._agent1) + ' vs ' + 
+                str(self._agent2) + '\n' + str(self._board))
 
     def legal_actions(self):
         """Return all possible legal actions for current agent.
@@ -59,24 +59,26 @@ class Game:
     def step(self):
         """Query current agent to act. Push action onto board."""
         action = self.current_agent().act(self)
-        self._board.push(action)
+        self._board.append(action)
 
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""
         while self._board:
+            print(self)
             self.step()
+        print(self)
         self._update_records()
         return self._board.winner
 
-    def update_records(self):
+    def _update_records(self):
         """Increment each agent's (win, draw, loss) records."""
-        u = self.board.utility()
+        u = self._board.utility()
         self._agent1.update_record(u)
         self._agent2.update_record(-u)
 
     def clear(self):
         """Return to intial state. Ready for new run."""
-        self.board.clear()
+        self._board.clear()
 
     def change_agents(self, agent1=None, agent2=None):
         if agent1 is not None:

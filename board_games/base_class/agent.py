@@ -1,4 +1,7 @@
-class Agent:
+from abc import ABC, abstractmethod
+import random 
+
+class Agent(ABC):
 
     def __init__(self, name, search):
         self._name = name
@@ -15,6 +18,7 @@ class Agent:
         """
         return self._name + ' ' + repr(self._search) + ' ' + repr(self._record)
 
+    @abstractmethod
     def act(self, game):
         """Return action to take in game.
 
@@ -28,7 +32,26 @@ class Agent:
 
         """
 
+    def update_record(self, utility):
+        if utility < 0:
+            self._record['losses'] += 1 
+        elif utility > 0:
+            self._record['wins'] += 1 
+        else:
+            self._record['draws'] += 1
+
     def clear(self):
         """Reset to initial state."""
         self._search.clear()
-        self._record = dict.fromkeys(self_record, 0)
+        self._record = dict.fromkeys(self._record, 0)
+
+class RandomAgent(Agent):
+
+    def __init__(self, name='random'):
+        super().__init__(name, None) 
+
+    def act(self, game):
+        return random.choice(game.legal_actions()) 
+
+    def clear(self):
+        self._record = dict.fromkeys(self._record, 0)
