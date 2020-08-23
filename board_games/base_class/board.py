@@ -58,7 +58,7 @@ class Board(ABC):
 
     def __init__(self, size):
         """Construct board as flat array of length size.
-        
+      
         Args
         ----
         size - int
@@ -208,7 +208,6 @@ class Board(ABC):
         """
         return hash(self) == hash(other)
 
-    @abstractmethod
     def __repr__(self):
         """Return 2d matrix.
 
@@ -220,6 +219,7 @@ class Board(ABC):
             [ am0 ... amn ] 
 
         """
+        return '\n'.join(str(self._board[row]) for row in self._rows)
 
     @abstractmethod
     def __str__(self):

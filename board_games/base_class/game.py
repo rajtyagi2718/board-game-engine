@@ -1,3 +1,5 @@
+# TODO logger
+
 class Game:
     """
     Handles game play: two agents alternate turns on board until win or draw.
@@ -64,7 +66,7 @@ class Game:
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""
         while self._board:
-            print(self)
+            print(self._board)
             self.step()
         print(self)
         self._update_records()

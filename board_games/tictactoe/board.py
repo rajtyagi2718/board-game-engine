@@ -84,23 +84,6 @@ class TicTacToeBoard(Board):
         self._hash_value = 0
         self.winner = None
 
-    def __repr__(self):
-        """Return 2-dim grid. 0 -> open, 1 -> agent1, 2 -> agent2.
-
-        Return
-        ------
-        str
-
-        Examples
-        --------
-        [0 0 0]    [0 1 0]    [1 1 2]
-        [0 0 0]    [2 2 0]    [2 2 1]
-        [0 0 0]    [1 2 1]    [1 2 1]
-
-        """
-        return '\n'.join(str(self._board[row]) for row in self._rows)
-
-
     def __str__(self):
         """Return string for command line interface.
 
@@ -111,6 +94,7 @@ class TicTacToeBoard(Board):
         // . . . //    // o o . //     // o o x //
         // . . . //    // x o x //     // x o x //
         ///////////    ///////////     ///////////
+
         """
         result = '/'*11 + '\n'
         for row in self._rows:
