@@ -51,8 +51,8 @@ for i in range(4, 28, 8):
         EDGES[j][3] = j+4
 
 Slide  = namedtuple('Slide', 'up start stop promotion')
-Jump   = namedtuple( 'Jump', 'up start stop promotion capture piece')
-Path   = namedtuple( 'Path', 'start stop promotion captures pieces')
+Jump   = namedtuple( 'Jump', 'up start stop promotion capture  piece')
+Path   = namedtuple( 'Path',    'start stop promotion captures pieces')
 
 SLIDES_UP   = [[] for _ in range(32)]
 SLIDES_DOWN = [[] for _ in range(32)]
@@ -60,8 +60,9 @@ SLIDES      = [[] for _ in range(32)]
 JUMPS_UP    = [[] for _ in range(32)]
 JUMPS_DOWN  = [[] for _ in range(32)]
 JUMPS       = [[] for _ in range(32)]
-ADJ = [[None]*32 for _ in range(32)]
+ADJ =  [[None]*32 for _ in range(32)]
 
+# TODO cleaner style?
 for start, adj in enumerate(EDGES):
     for stop in adj[:2]:
         if stop is None:
@@ -69,7 +70,7 @@ for start, adj in enumerate(EDGES):
         promotion = False if stop > 3 else True
         slide = Slide(True, start, stop, promotion)
         SLIDES_UP[start].append(slide)
-        SLIDES[start].append(slide)
+        SLIDES[start].append(slide._replace(promotion=False)) # promote once
         ADJ[start][stop] = slide
     for stop in adj[2:]:
         if stop is None:
@@ -77,7 +78,7 @@ for start, adj in enumerate(EDGES):
         promotion = False if stop < 28 else True
         slide = Slide(False, start, stop, promotion)
         SLIDES_DOWN[start].append(slide)
-        SLIDES[start].append(slide)
+        SLIDES[start].append(slide._replace(promotion=False))
         ADJ[start][stop] = slide
 
 for start, adj in enumerate(EDGES):
@@ -91,13 +92,13 @@ for start, adj in enumerate(EDGES):
             promotion = False if stop > 3 else True
             jump = Jump(True, start, stop, promotion, capture, None)
             JUMPS_UP[start].append(jump)
-            JUMPS[start].append(jump)
+            JUMPS[start].append(jump._replace(promotion=False))
             ADJ[start][stop] = jump
         else:
             promotion = False if stop < 28 else True
             jump = Jump(False, start, stop, promotion, capture, None)
             JUMPS_DOWN[start].append(jump)
-            JUMPS[start].append(jump)
+            JUMPS[start].append(jump._replace(promotion=False))
             ADJ[start][stop] = jump
 
 SLIDES_UP   = tuple(tuple(slides) for slides in SLIDES_UP)
@@ -117,7 +118,7 @@ class CheckersBoard(Board):
     # actions: Slide or Jump
     _slides = (None, SLIDES_UP, SLIDES_DOWN, SLIDES, SLIDES)
     _jumps = (None, JUMPS_UP, JUMPS_DOWN, JUMPS, JUMPS)
-    # _adj = ADJ TODO utlize adj
+    # _adj = ADJ TODO utlize adj?
 
     def __init__(self):
         super().__init__(32)
@@ -137,32 +138,30 @@ class CheckersBoard(Board):
                            if not self._board[slide.stop])
 
     def _add_piece_paths(self, piece, index):
+        """Update board, indices with added piece. Hash unaffected."""
         self._board[index] = piece
         self._indices[piece].add(index)
 
     def _del_piece_paths(self, index):
-        """Update board, indices with removed piece."""
+        """Update board, indices with removed piece. Hash unaffected."""
         piece = self._board[index]
         self._board[index] = 0
         self._indices[piece].remove(index)
 
-    def _append_paths(self, jump, trn):
-        # can only promote once
+    def _append_paths(self, jump):
         piece = self._board[jump.start]
-        if jump.promotion and piece > 2:
-            jump = jump._replace(promotion=False)   
 
         # start
-        self._del_piece_search(jump.start)
+        self._del_piece_paths(jump.start)
 
         # stop
         if jump.promotion:
-            piece = trn + 2
-        self._add_piece_search(piece, jump.stop)
+            piece += 2
+        self._add_piece_paths(piece, jump.stop)
 
         # capture
         jump = jump._replace(piece=self._board[jump.capture])
-        self._del_piece_search(jump.capture) 
+        self._del_piece_paths(jump.capture) 
 
         self._actions.append(jump)
 
@@ -173,42 +172,50 @@ class CheckersBoard(Board):
         return jump
          
     def _pop_paths(self): 
-        self.winner = None
         action = self._actions.pop() 
 
         # capture
-        self._add_piece_search(action.piece, action.capture)
+        self._add_piece_paths(action.piece, action.capture)
         
         # stop
         piece = self._board[action.stop]
-        self._del_piece_search(action.stop)
+        self._del_piece_paths(action.stop)
 
         # start
         if action.promotion:
             piece -= 2
-        self._add_piece_search(piece, action.start)
+        self._add_piece_paths(piece, action.start)
 
     def _legal_paths(self, jump):
+        """DFS all paths with jump as first edge.""" 
         oth = self.other()
 
         def pred(jump):
+            """Return True if jump is legal."""
             return (self._board[jump.capture] in (oth, oth+2) and
                     not self._board[jump.stop])
         
         def explore(jump):
+            """Depth first search graph of positions (nodes), jumps (edges)."""
             paths = []
             jump = self._append_paths(jump) 
-            for adj in self._jumps[self._board[jump.start]][jump.stop]:
+            for adj in self._jumps[self._board[jump.stop]][jump.stop]:
                 if pred(adj):
                     paths.extend([jump] + path for path in explore(adj))
-            self._pop_paths(jump)
+            self._pop_paths()
             return paths if paths else [[jump]]
+
 
         if not pred(jump):
             return []
         paths = explore(jump)
-        if len(paths) == 1:
-            return paths[0]
+
+        if len(paths) == 1 and len(paths[0]) == 1:
+            jump = paths[0][0]
+            jump = jump._replace(piece=self._board[jump.capture])
+            yield jump
+            return
+
         for path in paths:
             start = path[0].start
             stop = path[-1].stop
@@ -217,30 +224,17 @@ class CheckersBoard(Board):
             pieces = tuple(jump.piece for jump in path)
             yield Path(start, stop, promotion, captures, pieces)
 
-    # def _legal_jumps(self):
-    #     """Return list of legal jumps."""
-    #     # TODO multiple jumps
-    #     trn = self.turn()
-    #     return tuple(action
-    #                  for piece in (trn, trn+2)
-    #                  for index in self._indices[piece]
-    #                  for jump in self._jumps[piece][index]
-    #                  for action in self._legal_paths(jump))
-                          
-
     def _legal_jumps(self):
         """Return list of legal jumps."""
-        # TODO multiple jumps
         trn = self.turn()
-        oth = self.other()
-        return tuple(jump for piece in (trn, trn+2)
-                          for index in self._indices[piece]
-                          for jump in self._jumps[piece][index]
-                          if (self._board[jump.capture] in (oth, oth+2) and
-                              not self._board[jump.stop]))
-
+        return tuple(action
+                     for piece in (trn, trn+2)
+                     for index in self._indices[piece]
+                     for jump in self._jumps[piece][index]
+                     for action in self._legal_paths(jump))
+                          
     def legal_actions(self):
-        # TODO use start stop tuples for action
+        """Return all legal jumps and paths. If none, return legal slides."""
         return self._legal_jumps() or self._legal_slides()
          
     def _legal_slide(self, slide):
@@ -259,20 +253,33 @@ class CheckersBoard(Board):
         return (self._board[jump.capture] in (oth, oth+2) and
                 self._legal_slide(jump))
 
+    def _legal_path(self, path):
+        """Return True if path is a legal action."""
+        trn = self.turn()
+        oth = self.other()
+        return (all(self._board[capture] in (oth, oth+2)
+                    for capture in path.captures) and
+                all(self._board[capture] == piece for capture, piece 
+                    in zip(path.captures, path.pieces)) and
+                (not self._board[path.stop] or path.start == path.stop) and
+                self._board[path.start] in (trn, trn+2))
+
     def legal(self, action):
+        """Return True if aciton is legal."""
         if action is None:
             return False
         if isinstance(action, Jump):
             return self._legal_jump(action)
+        if isinstance(action, Path):
+            return self._legal_path(action)
         return not self._legal_jumps() and self._legal_slide(action)
 
     # TODO _check_winner, _legal, _turn, _other, _hash_calc
     def check_winner(self):
         if not self.legal_actions():
             self.winner = self.other()
-        # trn = self.turn()
-        # if not self._indices[trn] and not self._indices[trn+2]:
-        #     self.winner = self.other()
+        # TODO optimizations: False when moves < 20
+        #                     yield legal actions
 
     def _add_piece(self, piece, index):
         """Update board, hash, indices with added piece."""
@@ -288,29 +295,23 @@ class CheckersBoard(Board):
         self._indices[piece].remove(index)
 
     def append(self, action):
-        # TODO use start stop tuples for action,
-        # start, stop = action
-        # action = self._adj[start][stop]
         assert self.legal(action), (
-            'illegal action by agent%d' % (self.turn()) + repr(self),)
-        trn = self.turn()
-
-        # can only promote once
+            'illegal action by agent%d: %s\n%s' % (self.turn(), action, self))
+        # cache start piece before deleted
         piece = self._board[action.start]
-        if action.promotion and piece > 2:
-            action = action._replace(promotion=False)   
 
         # start
+        # remove start first since stop may equal start
         self._del_piece(action.start)
 
         # stop
         if action.promotion:
-            piece = trn + 2
+            piece += 2
         self._add_piece(piece, action.stop)
 
         # capture
         if isinstance(action, Jump):
-            assert piece == self._board[action.capture], (piece, self._board[action.capture])
+            assert action.piece == self._board[action.capture], (action.piece, self._board[action.capture], action, self)
             # action = action._replace(piece=self._board[action.capture])
             self._del_piece(action.capture)
         elif isinstance(action, Path):
@@ -319,11 +320,9 @@ class CheckersBoard(Board):
             for capture in action.captures:
                 self._del_piece(capture) 
             
-
         self._actions.append(action)
         self.check_winner()
 
-        print(action)
         print(self.winner, self._indices)
         for piece in range(1, 5):
             for index in self._indices[piece]:

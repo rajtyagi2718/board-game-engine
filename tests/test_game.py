@@ -13,7 +13,7 @@ class GameTestCase(unittest.TestCase):
         for Game in GAMES:
             with self.subTest(game=Game.__name__):
                 game = Game(RandomAgent('random1'), RandomAgent('random2'))
-                game.compete(20)
+                game.compete(1000)
                 self.assertEqual(game._agent1._record['wins'], 
                                  game._agent2._record['losses'])
                 self.assertEqual(game._agent1._record['losses'], 

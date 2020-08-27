@@ -51,6 +51,9 @@ class RandomAgent(Agent):
         super().__init__(name, None) 
 
     def act(self, game):
+        actions = game.legal_actions()
+        print(*actions, sep='\n')
+        return random.choice(actions)
         return random.choice(game.legal_actions()) 
 
     def clear(self):
