@@ -125,9 +125,10 @@ class CheckersBoard(Board):
         self._indices = (None, set(range(20, 32)), set(range(0, 12)),
                          set(), set())
         for i in range(20, 32):
-            self._board[i] = 1 
+            self._add_piece(1, i)
         for i in range(0, 12):
-            self._board[i] = 2
+            self._add_piece(2, i)
+        self._start_hash_value = self._hash_value
 
     def _legal_slides(self):
         """Return list of legal jumps."""
@@ -323,7 +324,7 @@ class CheckersBoard(Board):
         self._actions.append(action)
         self.check_winner()
 
-        print(self.winner, self._indices)
+        print('Indices: %s' % str(self._indices))
         for piece in range(1, 5):
             for index in self._indices[piece]:
                 assert self._board[index] == piece
@@ -355,7 +356,7 @@ class CheckersBoard(Board):
         self._actions.clear()
         self._indices = (None, set(range(20, 32)), set(range(0, 12)),
                          set(), set())
-        self._hash_value = 0 
+        self._hash_value = self._start_hash_value
         self.winner = None 
 
     def __str__(self):

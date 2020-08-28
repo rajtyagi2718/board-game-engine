@@ -61,13 +61,17 @@ class Game:
     def step(self):
         """Query current agent to act. Push action onto board."""
         action = self.current_agent().act(self)
-        print(action)
+        print('Action:', action)
         self._board.append(action)
 
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""
         while self._board:
-            print(self._board)
+            try:
+                print(self._board)
+                print('Hash: %d' % hash(self._board))
+            except TypeError:
+                assert False, (self._board._hash_value, type(self._board._hash_value))
             self.step()
         print(self)
         self._update_records()

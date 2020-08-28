@@ -196,7 +196,7 @@ class Board(ABC):
         int
 
         """
-        return self._hash_value
+        return int(self._hash_value)
 
     def __eq__(self, other):
         """Boards of equal hash are equal.

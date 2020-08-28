@@ -52,7 +52,7 @@ class RandomAgent(Agent):
 
     def act(self, game):
         actions = game.legal_actions()
-        print(*actions, sep='\n')
+        print('Actions:', *actions, sep='\n')
         return random.choice(actions)
         return random.choice(game.legal_actions()) 
 
