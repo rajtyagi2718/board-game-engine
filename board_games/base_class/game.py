@@ -67,11 +67,7 @@ class Game:
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""
         while self._board:
-            try:
-                print(self._board)
-                print('Hash: %d' % hash(self._board))
-            except TypeError:
-                assert False, (self._board._hash_value, type(self._board._hash_value))
+            print(self._board)
             self.step()
         print(self)
         self._update_records()
