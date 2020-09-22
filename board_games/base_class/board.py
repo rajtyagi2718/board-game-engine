@@ -224,3 +224,19 @@ class Board(ABC):
     @abstractmethod
     def __str__(self):
         """Return string for command line interface."""
+
+    def _state(self):
+        """Return string of state info for logger."""
+        result =   'MOVES: %d' % (len(self))
+        result += '\tTURN: %d' % (self.turn()) 
+        result += '\tWINNER: %s' % (self.winner)
+        result += '\nACTION: %s' % (self[-1])
+        result += '\nHASH: %d' % (self._hash_value)
+        result += '\nBOARD:\n%s' % (self)
+        result += '\nLEGAL ACTIONS: %s' % (str(self.legal_actions()))
+        return result
+
+    def _log(self, filepath):
+        """Write state info into file."""
+        with filepath.open('a') as f:
+            f.write(self._state())

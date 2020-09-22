@@ -7,7 +7,7 @@ from board_games.go.game import GoGame
 from board_games.base_class.agent import RandomAgent
 
 GAMES = [TicTacToeGame, ConnectFourGame, CheckersGame, GoGame]
-GAMES = [GoGame]
+GAMES = []
 
 class GameTestCase(unittest.TestCase):
 

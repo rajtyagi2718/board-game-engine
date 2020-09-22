@@ -61,7 +61,7 @@ class Game:
     def step(self):
         """Query current agent to act. Push action onto board."""
         action = self.current_agent().act(self)
-        print('Action:', action)
+        # print('Action:', action)
         self._board.append(action)
 
     def run(self):
