@@ -106,11 +106,13 @@ class Board(ABC):
         return len(self._actions)
 
     def __getitem__(self, index):
-        """Return action at index. Return None if IndexError."""
+        """Return action at index. Return None if IndexError at -1."""
         try:
-            return self._actions[-1]
+            return self._actions[index]
         except IndexError:
-            return None
+            if index == -1:
+                return None
+            return self._actions[index]
 
     @abstractmethod
     def check_winner(self):

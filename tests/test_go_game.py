@@ -14,7 +14,7 @@ class GoGameTestCase(unittest.TestCase):
         with self.logger_file_path.open('w') as f:
             f.write('GO GAME TEST CASES')
 
-    def test_capture(self):
+    def _test_capture(self):
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCAPTURE TEST CASES')
         CaptureSequence = namedtuple('capture_sequence', 
@@ -23,27 +23,27 @@ class GoGameTestCase(unittest.TestCase):
         capseq = CaptureSequence('corner single',
                                  (0, 8, 17), 
                                  (1, 9))
-        # capture_sequences.append(capseq)
+        capture_sequences.append(capseq)
         capseq = CaptureSequence('edge single',
                                  (4, 8, 17, 26),
                                  (3, 5, 13))
-        # capture_sequences.append(capseq)
+        capture_sequences.append(capseq)
         capseq = CaptureSequence('middle single',
                                  (22, 8, 17, 26, 35),
                                  (21, 23, 13, 31))
-        # capture_sequences.append(capseq)
+        capture_sequences.append(capseq)
         capseq = CaptureSequence('corner double',
                                  (0, 1, 8, 17), 
                                  (2, 9, 10))
-        # capture_sequences.append(capseq)
+        capture_sequences.append(capseq)
         capseq = CaptureSequence('edge double',
                                  (3, 4, 8, 17, 26),
                                  (2, 5, 12, 13))
-        # capture_sequences.append(capseq)
+        capture_sequences.append(capseq)
         capseq = CaptureSequence('middle double',
                                  (22, 31, 8, 17, 26, 35, 44),
                                  (21, 23, 13, 30, 32, 40))
-        # capture_sequences.append(capseq)
+        capture_sequences.append(capseq)
 
         capseq = CaptureSequence('failed previously',
                                  (40, 23, 55, 13, 45, 6, 50, 37, 3, 70, 54, 77, 57, 22, 67, 19, 60, 72, 34, 42, 79, 51, 52, 43, 10, 58, 71, 56, 12, 4, 61, 38, 2, 44, 78, 69, 1, 38, 6, 30, 18, 53, 40, 33, 72, 2, 18, 38, 23, 12, 64, 18, 1, 3, 68, 2, 12, 66),
@@ -58,7 +58,7 @@ class GoGameTestCase(unittest.TestCase):
                     f.write('\n\nCAPTURE SEQUENCE: %s' % (name))
                 game.clear()
                 for _ in range(len(actions1) + len(actions2)):
-                    with self.subTest(move_num=len(game._board)):
+                    with self.subTest(move_num=len(game._board)+1):
                         game.step() 
                         with self.logger_file_path.open('a') as f:
                             f.write('\n\n')
@@ -69,7 +69,7 @@ class GoGameTestCase(unittest.TestCase):
         game = GoGame(RandomAgent('random1'), RandomAgent('random2'))
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCOMPETE TEST CASES')
-        for game_num in range(0):
+        for game_num in range(100):
             with self.logger_file_path.open('a') as f:
                 f.write('\n\nGAME: %d' % (game_num))
                 
@@ -86,12 +86,12 @@ class GoGameTestCase(unittest.TestCase):
     def _legal_state(self, game):
         """Check game board components in legal state. Log, assert if not."""
         for (dfs, grp) in zip(
-            self._dfs_components(game), self._groups_components(game)):
+            self._dfs_components(game), self._board_components(game)):
             # components same
             if dfs != grp:
                 with self.logger_file_path.open('a') as f:
                     f.write('\nILLEGAL STATE' + '*'*66)
-                    f.write('\nACTIONS: %s' % list(game._board))
+                    # f.write('\nACTIONS: %s' % list(game._board))
                     f.write('\nDFS INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s'
                             % dfs)
                     f.write('\nGRP INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s'
@@ -143,20 +143,18 @@ class GoGameTestCase(unittest.TestCase):
             
             yield (i, component, liberties)
 
-    def _groups_components(self, game):
+    def _board_components(self, game):
         """Return lists of components, liberties. From groups data."""
         visited = [False]*81 
+        groups = game._board._groups
 
         for i in range(81):
             if visited[i]:
                 continue
-            # if not game._board._board[i]:
-            #     continue
 
-            component = game._board._groups.component(i)
+            component = set(game._board._components[groups.root(i)])
             for j in component:
                 visited[j] = True
-            component = set(component)
-            liberties = set(game._board._groups.liberties(i))
+            liberties = set(game._board._liberties[groups.root(i)])
 
             yield (i, component, liberties)

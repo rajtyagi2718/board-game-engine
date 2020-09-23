@@ -1,5 +1,7 @@
+import numpy as np
+from collections import namedtuple
 from board_games.base_class.board import get_winners, get_hashes, Board
-from board_games.go.utils import LibertiesDisjointSet
+from board_games.go.utils import DisjointSet
 
 """
 indices
@@ -31,9 +33,11 @@ ADJS[80] = [71, 79]
 ADJS = tuple(tuple(x) for x in ADJS)
 
 
-# adj:   map from index to adjacent indices
-# board: map from index to color
-# group: map from index to component 
+# adj: array map from index to adjacent indices
+# board: array map from index to color
+# groups: disjoint set map from index to root
+# components: list map from root index to component 
+# liberties: list indices 
 
 # place stone in index
 #     board
@@ -43,7 +47,6 @@ ADJS = tuple(tuple(x) for x in ADJS)
 #     adj, group, group.capture
 # self capture
 #     group.capture
-
 
 class GoBoard(Board):
 
@@ -55,7 +58,9 @@ class GoBoard(Board):
     def __init__(self):
         super().__init__(81)
         self._legal_actions = set(range(81)) | {None}
-        self._groups = LibertiesDisjointSet(81, ADJS)
+        self._groups = DisjointSet(81)
+        self._components = [{i} for i in range(81)]
+        self._liberties = [set(adj) for adj in self._adjs]
 
     def legal_actions(self):
         return tuple(self._legal_actions)
@@ -69,11 +74,42 @@ class GoBoard(Board):
             # TODO calculate winner
             self.winner = 3
 
-    def append(self, action):
-        assert self.legal(action), (
-            'illegal action by agent%d' % (self.turn()) + repr(self),)
-        # print('*'*10 + 'Append %d!' % action + '*'*10) 
+    def _join(self, friends):
+        """Join friends together. Update groups, components, liberties."""
+        # friends are all roots sorted in decreasing size
+        for i,j in zip(friends, friends[1:]): 
+            self._groups.connect(i, j)
+        root = friends[0]
+        # old sets stored in history, make new sets
+        self._components[root] = set().union(*(self._components[i]
+                                               for i in friends))
+        self._liberties[root] = set().union(*(self._liberties[i]
+                                              for i in friends))
 
+    def _capture(self, root):
+        """Remove root group. Reset groups, components, liberties.""" 
+        component = tuple(self._components[root])
+        self._groups.atomize(component)
+        for i in component:
+            self._board[i] = 0
+            self._components[i] = {i}
+            self._legal_actions.add(i)
+
+        # compute component liberties separate loop, depends on empty board
+        # component are all zeroed and roots
+        for i in component:
+            self._liberties[i] = set()
+            for adj in self._adjs[i]:
+                if self._board[adj]:
+                    captor = self._groups.root(adj)
+                    self._liberties[captor].add(i)
+                else:
+                    self._liberties[i].add(adj)
+
+    def append(self, action):
+        # check action is legal
+        assert self.legal(action), (
+            'illegal action by agent%d. %s already played.' % (self.turn(), action))
         if action is None:
             self._actions.append(action)
             self.check_winner()
@@ -81,42 +117,44 @@ class GoBoard(Board):
 
         trn = self.turn()
         oth = self.other()
+
+        # place stone
         self._board[action] = trn
 
-        # remove liberties from adj, connect if same, remove if capture
-        # TODO redundant component capture
-        for adj in self._adjs[action]:
-            self._groups.remove(adj, action)
-            if self._board[adj] == trn:
-                self._groups.connect(adj, action)
-            elif self._board[adj] and self._groups.captured(adj):
-                # print('*'*10 + 'Capture %d!' % adj + '*'*10) 
-                for comp in self._groups.component(adj):
-                    self._board[comp] = 0
-                    self._legal_actions.add(comp)
-                self._groups.atomize(adj)
+        # remove action liberty from adjs
+        adjs = set(self._groups.root(i) for i in self._adjs[action])
+        for adj in adjs:
+            self._liberties[adj].remove(action)
 
-        # remove action component if self capture
-        if self._groups.captured(action):
-            # print('*'*10 + 'Self-Capture!' + '*'*10)
-            for comp in self._groups.component(action):
-                self._board[comp] = 0
-                self._legal_actions.add(comp)
-            self._groups.atomize(action)
-            
-    
+        # connect stone with friends
+        friends = set(self._groups.root(i) for i in self._adjs[action] 
+                      if self._board[i] == trn)
+        friends = sorted(friends, key=lambda i: self._groups._weight[i],
+                         reverse=True)
+        friends.append(action)
+        if len(friends) > 1:
+            self._join(friends)
+
+        # check enemy captures: if root has no liberties
+        enemies = set(self._groups.root(i) for i in self._adjs[action]
+                      if self._board[i] == oth)
+        enemies = [i for i in enemies if not self._liberties[i]]
+        for enemy in enemies:
+            self._capture(enemy)
+
+        # check self capture: friends[0] is root of action group
+        if not self._liberties[friends[0]]:
+            self._capture(friends[0])
 
         # turn depends on number of moves
         # increment hash value before appending to actions
-        # TODO self._hash_value += self.hash_calc(trn, action)
+        # self._hash_value += self.hash_calc(trn, action)
         self._actions.append(action)
         self._legal_actions.remove(action)
         self.check_winner()
 
-        comps = str(self._groups)
-        # print('\n'.join([comps[i:i+9] for i in range(0, 81, 9)]))
-
     def pop(self):
+        assert False, 'pop not defined yet'
         last_action = self._actions.pop()
         if last_action is None:
             self.winner = None 
@@ -149,10 +187,13 @@ class GoBoard(Board):
     def clear(self):
         self._board[:] = 0
         self._actions.clear()
-        self._legal_actions = set(range(81))
-        self._groups = LibertiesDisjointSet(81, ADJS)
         self._hash_value = 0
         self.winner = None
+
+        self._legal_actions = set(range(81))
+        self._groups.clear()
+        self._components = [{i} for i in range(81)]
+        self._liberties = [set(adj) for adj in self._adjs]
 
     def __str__(self):
         """Return string for command line interface.
@@ -184,5 +225,7 @@ class GoBoard(Board):
     def _state(self):
         """Return string of state info for logger."""
         result = super()._state() 
-        result += '\nCOMPONENTS:\n%s' % (self._groups)
+        groups = str(self._groups)
+        groups = '\n'.join((' '.join(groups[i:i+9]) for i in range(0, 81, 9)))
+        result += '\nCOMPONENTS:\n%s' % (groups)
         return result
