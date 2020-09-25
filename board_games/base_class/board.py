@@ -232,7 +232,7 @@ class Board(ABC):
         result =   'MOVES: %d' % (len(self))
         result += '\tTURN: %d' % (self.turn()) 
         result += '\tWINNER: %s' % (self.winner)
-        result += '\nACTION: %s' % (self[-1])
+        result += '\nACTION: %s' % (str(self[-1]))
         result += '\nHASH: %d' % (self._hash_value)
         result += '\nBOARD:\n%s' % (self)
         result += '\nLEGAL ACTIONS: %s' % (str(self.legal_actions()))

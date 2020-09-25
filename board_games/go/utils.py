@@ -18,7 +18,7 @@ class DisjointSet():
     def __init__(self, size):
         self._weight = np.ones(size, dtype='uint8')
         self._parent = np.arange(size, dtype='uint8')
-        self._connections = []
+        self._updates = []
 
     def __len__(self):
         """Return number of nodes."""
@@ -35,8 +35,8 @@ class DisjointSet():
         return self._weight[self.root(i)]
 
     def connect(self, i, j):
-        """Connect roots j to i. Weight invariant assumed satisfied."""
-        self._connections.append(Connection(i, j))
+        """Connect roots j to i. Weight invariant, distinct args assumed."""
+        self._updates.append(Connection(i, j))
         self._parent[j] = i
         self._weight[i] += self._weight[j]
 
@@ -44,15 +44,15 @@ class DisjointSet():
         """Break component into singletons."""
         weight = tuple(self._weight[i] for i in component)
         parent = tuple(self._parent[i] for i in component)
-        self._connections.append(Atoms(component, weight, parent))
+        self._updates.append(Atoms(component, weight, parent))
         for i in component:
             self._weight[i] = 1
             self._parent[i] = i
 
-    def undo_connection(self, i, j):
+    def undo_connect(self, i, j):
         """Disconnect roots j to i. Assumed to be last connection."""
         
-        connection = self._connections.pop()
+        connection = self._updates.pop()
         assert isinstance(connection, Connection), 'last operation was not to connect'
         assert (connection.parent, connection.child) == (i, j), 'last connection was between %d and %d, not %d and %d' % (connection.parent, connection.child, i, j)
         self._parent[j] = j
@@ -60,8 +60,8 @@ class DisjointSet():
 
     def undo_atomize(self, component):
         """Reconnect component together. Assumed to be last change."""
-        atoms = self._connections.pop() 
-        assert isinstance(connection, Atoms), 'last operation was not to atomize'
+        atoms = self._updates.pop() 
+        assert isinstance(atoms, Atoms), 'last operation was not to atomize'
         assert atoms.component == component, 'last atomized component was %s not %s' % (atoms.component, component)
         for i,w,p in zip(atoms.component, atoms.weight, atoms.parent):
             self._weight[i] = w
@@ -70,7 +70,7 @@ class DisjointSet():
     def clear(self):
         self._weight[:] = 1
         self._parent[:] = range(len(self))
-        self._connections.clear()
+        self._updates.clear()
 
     def __eq__(self, other):
         """Return bool if current states equivalent. Disregard connections."""
@@ -94,22 +94,21 @@ class DisjointSet():
 
         # already connected
         if pi == pj:  
-            self._connections.append(None)
+            self._updates.append(None)
             return
 
         # connect j to i
         if self._weight[pi] >= self._weight[pj]:
-            self._connections.append(Connection(pi, pj))
+            self._updates.append(Connection(pi, pj))
             self._parent[pj] = pi
             self._weight[pi] += self._weight[pj]
 
         # connect i to j
         else:
-            self._connections.append(Connection(pj, pi))
+            self._updates.append(Connection(pj, pi))
             self._parent[pi] = pj
             self._weight[pj] += self._weight[pi]
 
     def connected(self, i, j):
         """Return bool if i and j share same root."""
         return self.root(i) == self.root(j)
-

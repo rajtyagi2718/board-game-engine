@@ -7,15 +7,15 @@ from board_games.go.game import GoGame
 from board_games.base_class.agent import RandomAgent
 
 GAMES = [TicTacToeGame, ConnectFourGame, CheckersGame, GoGame]
-GAMES = []
+GAMES = [GoGame]
 
 class GameTestCase(unittest.TestCase):
 
-    def test_compete(self):
+    def _test_compete(self):
         for Game in GAMES:
             with self.subTest(game=Game.__name__):
                 game = Game(RandomAgent('random1'), RandomAgent('random2'))
-                game.compete(1)
+                game.compete(10)
                 self.assertEqual(game._agent1._record['wins'], 
                                  game._agent2._record['losses'])
                 self.assertEqual(game._agent1._record['losses'], 
@@ -23,13 +23,13 @@ class GameTestCase(unittest.TestCase):
                 self.assertEqual(game._agent1._record['draws'], 
                                  game._agent2._record['draws'])
 
-    # def test_undo(self):
-    #     for Game in GAMES:
-    #         with self.subTest(game=Game.__name__):
-    #             GameUndo = GameUndoFactory(Game)
-    #             game_undo = GameUndo(RandomAgent('random1'),
-    #                                  RandomAgent('random2'))
-    #             game_undo.compete(100)
+    def test_undo(self):
+        for Game in GAMES:
+            with self.subTest(game=Game.__name__):
+                GameUndo = GameUndoFactory(Game)
+                game_undo = GameUndo(RandomAgent('random1'),
+                                     RandomAgent('random2'))
+                game_undo.compete(10)
              
 
 
@@ -40,13 +40,13 @@ def GameUndoFactory(Game):
 
         def undo(self):
             """Undo last action."""
-            print('Undo')
+            # print('Undo')
             self._board.pop() 
 
         def run(self):
             """Take steps or undo until board is terminal. Return winner."""
             while self._board:
-                print(self._board)
+                # print(self._board)
                 if random.random() < .5 or not len(self._board):
                     self.step()
                 else:

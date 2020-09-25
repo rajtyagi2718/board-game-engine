@@ -65,11 +65,11 @@ class GoGameTestCase(unittest.TestCase):
                             f.write(game._board._state())
                         self._legal_state(game)
 
-    def test_compete(self):
+    def _test_compete(self):
         game = GoGame(RandomAgent('random1'), RandomAgent('random2'))
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCOMPETE TEST CASES')
-        for game_num in range(100):
+        for game_num in range(10):
             with self.logger_file_path.open('a') as f:
                 f.write('\n\nGAME: %d' % (game_num))
                 
@@ -91,7 +91,7 @@ class GoGameTestCase(unittest.TestCase):
             if dfs != grp:
                 with self.logger_file_path.open('a') as f:
                     f.write('\nILLEGAL STATE' + '*'*66)
-                    # f.write('\nACTIONS: %s' % list(game._board))
+                    f.write('\nACTIONS: %s' % list(game._board))
                     f.write('\nDFS INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s'
                             % dfs)
                     f.write('\nGRP INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s'
