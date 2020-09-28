@@ -73,11 +73,60 @@ class GoBoard(Board):
     def legal(self, action):
         return action in self._legal_actions
 
+    def _territory(self):
+        """Return score of captured empty components."""
+        score = np.zeros(3)
+
+        # depth first search, explicit stac
+        visited = np.array(self._board, dtype='bool')
+        for i in range(81):
+            if visited[i]:
+                continue
+            
+            stack = [i]
+            component = set()
+            threats1 = False
+            threats2 = False
+
+            while stack and not (threats1 and threats2):
+                j = stack.pop()
+                if visited[j]:
+                    continue
+                visited[j] = True
+                component.add(j)
+               
+                for adj in self._adjs[j]:
+                    if self._board[adj] == 1:
+                        threats1 = True 
+                    elif self._board[adj] == 2:
+                        threats2 = True 
+                    elif not visited[adj]:
+                        stack.append(adj) 
+
+            if threats1 and not threats2:
+                score[1] += len(component) 
+            elif threats2 and not threats1:
+                score[2] += len(component) 
+            
+        return score
+
     def check_winner(self):
         if ((self[-1] is None and self[-2] is None and len(self) > 1) or 
             len(self._legal_actions) == 1):
-            # TODO calculate winner
-            self.winner = 3
+
+            # count stones
+            score = np.zeros(3)
+            for i in range(81):
+                if self._board[i]:
+                    score[self._board[i]] += 1
+            
+            # count territory 
+            score += self._territory()
+
+            if score[1] != score[2]:
+                self.winner = score.argmax()
+            else:     
+                self.winner = 0
 
     def _join(self, friends):
         """Join friends together. Update data structures. Return join tuple."""
