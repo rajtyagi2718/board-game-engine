@@ -67,9 +67,9 @@ class Game:
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""
         while self._board:
-            print(self._board)
+            # print(self._board)
             self.step()
-        print(self)
+        # print(self)
         self._update_records()
         return self._board.winner
 

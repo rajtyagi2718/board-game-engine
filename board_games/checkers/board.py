@@ -285,14 +285,16 @@ class CheckersBoard(Board):
     def _add_piece(self, piece, index):
         """Update board, hash, indices with added piece."""
         self._board[index] = piece
-        self._hash_value += self.hash_calc(piece, index)
+        # TODO zobrist hash
+        # self._hash_value += self.hash_calc(piece, index)
         self._indices[piece].add(index)
 
     def _del_piece(self, index):
         """Update board, hash, indices with removed piece."""
         piece = self._board[index]
         self._board[index] = 0
-        self._hash_value -= self.hash_calc(piece, index)
+        # TODO zobrist hash
+        # self._hash_value -= self.hash_calc(piece, index)
         self._indices[piece].remove(index)
 
     def append(self, action):
@@ -324,7 +326,7 @@ class CheckersBoard(Board):
         self._actions.append(action)
         self.check_winner()
 
-        print('Indices: %s' % str(self._indices))
+        # print('Indices: %s' % str(self._indices))
         for piece in range(1, 5):
             for index in self._indices[piece]:
                 assert self._board[index] == piece

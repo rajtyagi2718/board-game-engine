@@ -14,7 +14,7 @@ class GoGameTestCase(unittest.TestCase):
         with self.logger_file_path.open('w') as f:
             f.write('GO GAME TEST CASES')
 
-    def _test_capture(self):
+    def test_capture(self):
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCAPTURE TEST CASES')
         CaptureSequence = namedtuple('capture_sequence', 
@@ -45,11 +45,6 @@ class GoGameTestCase(unittest.TestCase):
                                  (21, 23, 13, 30, 32, 40))
         capture_sequences.append(capseq)
 
-        capseq = CaptureSequence('failed previously',
-                                 (40, 23, 55, 13, 45, 6, 50, 37, 3, 70, 54, 77, 57, 22, 67, 19, 60, 72, 34, 42, 79, 51, 52, 43, 10, 58, 71, 56, 12, 4, 61, 38, 2, 44, 78, 69, 1, 38, 6, 30, 18, 53, 40, 33, 72, 2, 18, 38, 23, 12, 64, 18, 1, 3, 68, 2, 12, 66),
-                                 (76, 68, 14, 5, 36, 35, 39, 80, 49, 69, 75, 59, 53, 74, 15, 17, 11, 27, 46, 25, 24, 21, 20, 32, 31, 66, 8, 7, 29, 48, 80, 26, 47, 41, 28, 63, 64, 59, 9, 65, 62, 16, 73, 37, 0, 13, 76, 19, 75, 65, 4, 73, 74, 10, 3, 1, 59)) 
-        capture_sequences.append(capseq)
-
         for name, actions1, actions2 in capture_sequences:
             with self.subTest(capture_name=name):
                 game = GoGame(TestAgent('test1', actions1), 
@@ -63,9 +58,9 @@ class GoGameTestCase(unittest.TestCase):
                         with self.logger_file_path.open('a') as f:
                             f.write('\n\n')
                             f.write(game._board._state())
-                        self._legal_state(game)
+                        self._test_legal_state(game)
 
-    def _test_compete(self):
+    def test_compete_legal_state(self):
         game = GoGame(RandomAgent('random1'), RandomAgent('random2'))
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCOMPETE TEST CASES')
@@ -81,9 +76,9 @@ class GoGameTestCase(unittest.TestCase):
                         with self.logger_file_path.open('a') as f:
                             f.write('\n\n')
                             f.write(game._board._state())
-                        self._legal_state(game)
+                        self._test_legal_state(game)
 
-    def _legal_state(self, game):
+    def _test_legal_state(self, game):
         """Check game board components in legal state. Log, assert if not."""
         for (dfs, grp) in zip(
             self._dfs_components(game), self._board_components(game)):
