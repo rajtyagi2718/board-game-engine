@@ -1,4 +1,5 @@
 from board_games.base_class.board import get_hashes, Board
+
 from collections import namedtuple
 
 """
@@ -20,36 +21,37 @@ ROWS = tuple(slice(i, i+4) for i in range(0, 32, 4))
 HASHES = get_hashes(5, 32)
 
 # up/left, up/right, down/left, down/right
-EDGES = [[None]*4 for i in range(32)]
+_EDGES = [[None]*4 for i in range(32)]
 # up/left
 for i in range(5, 37, 8):
     for j in range(i, i+3):
-        EDGES[j][0] = j-5
+        _EDGES[j][0] = j-5
 for i in range(8, 32, 8):
     for j in range(i, i+4):
-        EDGES[j][0] = j-4
+        _EDGES[j][0] = j-4
 # up/right
 for i in range(4, 36, 8):
     for j in range(i, i+4):
-        EDGES[j][1] = j-4
+        _EDGES[j][1] = j-4
 for i in range(8, 32, 8):
     for j in range(i, i+3):
-        EDGES[j][1] = j-3
+        _EDGES[j][1] = j-3
 # down/left
 for i in range(0, 32, 8):
     for j in range(i, i+4):
-        EDGES[j][2] = j+4
+        _EDGES[j][2] = j+4
 for i in range(5, 29, 8):
     for j in range(i, i+3):
-        EDGES[j][2] = j+3
+        _EDGES[j][2] = j+3
 # down/right
 for i in range(0, 32, 8):
     for j in range(i, i+3):
-        EDGES[j][3] = j+5
+        _EDGES[j][3] = j+5
 for i in range(4, 28, 8):
     for j in range(i, i+4):
-        EDGES[j][3] = j+4
+        _EDGES[j][3] = j+4
 
+# actions
 Slide  = namedtuple('Slide', 'up start stop promotion')
 Jump   = namedtuple( 'Jump', 'up start stop promotion capture  piece')
 Path   = namedtuple( 'Path',    'start stop promotion captures pieces')
@@ -60,10 +62,9 @@ SLIDES      = [[] for _ in range(32)]
 JUMPS_UP    = [[] for _ in range(32)]
 JUMPS_DOWN  = [[] for _ in range(32)]
 JUMPS       = [[] for _ in range(32)]
-ADJ =  [[None]*32 for _ in range(32)]
 
 # TODO cleaner style?
-for start, adj in enumerate(EDGES):
+for start, adj in enumerate(_EDGES):
     for stop in adj[:2]:
         if stop is None:
             continue
@@ -71,7 +72,6 @@ for start, adj in enumerate(EDGES):
         slide = Slide(True, start, stop, promotion)
         SLIDES_UP[start].append(slide)
         SLIDES[start].append(slide._replace(promotion=False)) # promote once
-        ADJ[start][stop] = slide
     for stop in adj[2:]:
         if stop is None:
             continue
@@ -79,13 +79,12 @@ for start, adj in enumerate(EDGES):
         slide = Slide(False, start, stop, promotion)
         SLIDES_DOWN[start].append(slide)
         SLIDES[start].append(slide._replace(promotion=False))
-        ADJ[start][stop] = slide
 
-for start, adj in enumerate(EDGES):
+for start, adj in enumerate(_EDGES):
     for direc, capture in enumerate(adj):
         if capture is None:
             continue
-        stop = EDGES[capture][direc] 
+        stop = _EDGES[capture][direc] 
         if stop is None:
             continue
         if direc < 2:
@@ -93,13 +92,11 @@ for start, adj in enumerate(EDGES):
             jump = Jump(True, start, stop, promotion, capture, None)
             JUMPS_UP[start].append(jump)
             JUMPS[start].append(jump._replace(promotion=False))
-            ADJ[start][stop] = jump
         else:
             promotion = False if stop < 28 else True
             jump = Jump(False, start, stop, promotion, capture, None)
             JUMPS_DOWN[start].append(jump)
             JUMPS[start].append(jump._replace(promotion=False))
-            ADJ[start][stop] = jump
 
 SLIDES_UP   = tuple(tuple(slides) for slides in SLIDES_UP)
 SLIDES_DOWN = tuple(tuple(slides) for slides in SLIDES_DOWN)
@@ -107,7 +104,8 @@ SLIDES      = tuple(tuple(slides) for slides in SLIDES)
 JUMPS_UP    = tuple(tuple(jumps) for jumps in JUMPS_UP)
 JUMPS_Down  = tuple(tuple(jumps) for jumps in JUMPS_DOWN)
 JUMPS       = tuple(tuple(jumps) for jumps in JUMPS)
-ADJ = tuple(tuple(row) for row in ADJ)
+
+del _EDGES
 
 class CheckersBoard(Board):
 
@@ -115,10 +113,8 @@ class CheckersBoard(Board):
     _rows = ROWS  # slices
     _hashes = HASHES  # ints
 
-    # actions: Slide or Jump
     _slides = (None, SLIDES_UP, SLIDES_DOWN, SLIDES, SLIDES)
     _jumps = (None, JUMPS_UP, JUMPS_DOWN, JUMPS, JUMPS)
-    # _adj = ADJ TODO utlize adj?
 
     def __init__(self):
         super().__init__(32)

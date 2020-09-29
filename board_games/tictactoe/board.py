@@ -10,17 +10,17 @@ indices
 """
 
 PIECES = ('.', 'x', 'o')
-
-SLICES = []
+_SLICES = []
 for i in range(0, 9, 3):  # rows
-    SLICES.append(slice(i, i+3))
-ROWS = tuple(SLICES)
+    _SLICES.append(slice(i, i+3))
+ROWS = tuple(_SLICES)
 for j in range(3):  # columns
-    SLICES.append(slice(j, 9, 3))
-SLICES.extend((slice(0, 9, 4), slice(2, 8, 2)))  # diagonals
-WINNERS = get_winners(9, SLICES)
-del SLICES
+    _SLICES.append(slice(j, 9, 3))
+_SLICES.extend((slice(0, 9, 4), slice(2, 8, 2)))  # diagonals
+WINNERS = get_winners(9, _SLICES)
 HASHES = get_hashes(3, 9)
+
+del _SLICES
 
 class TicTacToeBoard(Board):
 
@@ -68,14 +68,14 @@ class TicTacToeBoard(Board):
         self.check_winner()
 
     def pop(self):
-        last_action = self._actions.pop()
-        self._board[last_action] = 0
-        self._legal_actions.add(last_action)
+        action = self._actions.pop()
+        self._board[action] = 0
+        self._legal_actions.add(action)
         self.winner = None
         # turn depends on number of moves
         # decrement hash value after popping from actions
-        self._hash_value -= self.hash_calc(self.turn(), last_action)
-        return last_action
+        self._hash_value -= self.hash_calc(self.turn(), action)
+        return action
 
     def clear(self):
         self._board[:] = 0

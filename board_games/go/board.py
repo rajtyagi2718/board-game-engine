@@ -1,7 +1,8 @@
-import numpy as np
-from collections import namedtuple, defaultdict
 from board_games.base_class.board import get_winners, get_hashes, Board
 from board_games.go.utils import DisjointSet
+
+import numpy as np
+from collections import namedtuple, defaultdict
 
 """
 indices
@@ -32,7 +33,7 @@ ADJS[72] = [63, 73]
 ADJS[80] = [71, 79]
 ADJS = tuple(tuple(x) for x in ADJS)
 
-# Actions
+# actions
 Action = namedtuple('Action', 'action adjs join captures')
 Capture = namedtuple('Capture', 
     'turn, indices, components, liberties, captors, boundaries')
@@ -67,10 +68,26 @@ class GoBoard(Board):
         self._components = [{i} for i in range(81)]
         self._liberties = [set(adj) for adj in self._adjs]
 
+    def _check_ko(self):
+        try:
+            last2, last1 = self[-2:]
+            return (len(last1.captures) == 1 and
+                    len(last1.captures[0].indices) == 1 and
+                    last1.captures[0].indices[0] == last2.action)
+        except ValueError:
+            return False
+
     def legal_actions(self):
+        if self._check_ko():
+            ko_action = self[-2].action 
+            return tuple(self._legal_actions - {ko_action})
         return tuple(self._legal_actions)
 
     def legal(self, action):
+        if self._check_ko():
+            ko_action = self[-2].action
+            if action == ko_action:
+                return False 
         return action in self._legal_actions
 
     def _territory(self):

@@ -14,7 +14,7 @@ class GoGameTestCase(unittest.TestCase):
         with self.logger_file_path.open('w') as f:
             f.write('GO GAME TEST CASES')
 
-    def test_capture(self):
+    def _test_capture(self):
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCAPTURE TEST CASES')
         CaptureSequence = namedtuple('capture_sequence', 
@@ -60,7 +60,7 @@ class GoGameTestCase(unittest.TestCase):
                             f.write(game._board._state())
                         self._test_legal_state(game)
 
-    def test_compete_legal_state(self):
+    def _test_compete_legal_state(self):
         game = GoGame(RandomAgent('random1'), RandomAgent('random2'))
         with self.logger_file_path.open('a') as f:
             f.write('\n\nCOMPETE TEST CASES')
@@ -78,6 +78,71 @@ class GoGameTestCase(unittest.TestCase):
                             f.write(game._board._state())
                         self._test_legal_state(game)
 
+    def test_repeated_state(self):
+        with self.logger_file_path.open('a') as f:
+            f.write('\n\nREPEATED TEST CASES')
+        RepeatedSequence = namedtuple('repeated_sequence', 
+                                      'name actions1 actions2 illegal')
+        repeated_sequences = []
+        repseq = RepeatedSequence('ko 1-1',
+                                  (1, 9, 19, 11, 11),
+                                  (2, 12, 20, 10),
+                                  True)
+        repeated_sequences.append(repseq)
+        repseq = RepeatedSequence('ko 1-1-2',
+                                  (1, 9, 19, 11, 80, 11),
+                                  (2, 12, 20, 10, 79),
+                                  False)
+        repeated_sequences.append(repseq)
+        repseq = RepeatedSequence('ko 1-2',
+                                  (80, 2, 12, 20, 10),
+                                  (1, 9, 19, 11, 11),
+                                  True)
+        repeated_sequences.append(repseq)
+        repseq = RepeatedSequence('ko 2-1',
+                                  (9, 1, 11, 19, 19),
+                                  (18, 28, 20, 10),
+                                  True)
+        repeated_sequences.append(repseq)
+        repseq = RepeatedSequence('ko 2-1-2',
+                                  (9, 1, 11, 19, 80, 19),
+                                  (18, 28, 20, 10, 79),
+                                  False)
+        repeated_sequences.append(repseq)
+        repseq = RepeatedSequence('ko 2-2',
+                                  (80, 18, 28, 20, 10),
+                                  (9, 1, 11, 19, 19),
+                                  True)
+        repeated_sequences.append(repseq)
+
+        for name, actions1, actions2, illegal in repeated_sequences:
+            with self.subTest(repeated_name=name):
+                game = GoGame(TestAgent('test1', actions1), 
+                              TestAgent('test2', actions2))
+                game.clear()
+                for _ in range(len(actions1) + len(actions2) - 1):
+                    game.step() 
+                if illegal:
+                    try:
+                        game.step()
+                    except AssertionError:
+                        continue    
+                    with self.logger_file_path.open('a') as f:
+                        f.write('\n\nILLEGAL REPEATED STATE: %s\n' % (name))
+                        f.write(game._board._state())
+                    self.assertTrue(False, 'illegal repeated state')
+                    break 
+                else:
+                    try:
+                        game.step()
+                    except AssertionError:
+                        with self.logger_file_path.open('a') as f:
+                            f.write('\n\nLEGAL REPEATED STATE: %s\n' % (name))
+                            f.write(game._board._state())
+                        self.assertTrue(False, 'legal repeated state')
+                        break 
+        
+                
     def _test_legal_state(self, game):
         """Check game board components in legal state. Log, assert if not."""
         for (dfs, grp) in zip(

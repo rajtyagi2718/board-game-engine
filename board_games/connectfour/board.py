@@ -15,23 +15,24 @@ indices
 PIECES = ('.', 'x', 'o')
 ROWS = tuple(slice(i, i+7) for i in range(35, -1, -7))
 
-SLICES = []
+_SLICES = []
 for i in range(0, 42, 7):  # rows
     for j in range(4):
-        SLICES.append(slice(i+j, i+j+4))
+        _SLICES.append(slice(i+j, i+j+4))
 for i in range(0, 21, 7):  # columns
     for j in range(7):
-        SLICES.append(slice(i+j, i+j+28, 7))
+        _SLICES.append(slice(i+j, i+j+28, 7))
 for i in range(0, 21, 7):  # diagonals
     for j in range(4):
-        SLICES.append(slice(i+j, i+j+32, 8))
+        _SLICES.append(slice(i+j, i+j+32, 8))
 for i in range(0, 21, 7):
     for j in range(3, 7):
-        SLICES.append(slice(i+j, i+j+24, 6))
+        _SLICES.append(slice(i+j, i+j+24, 6))
     
-WINNERS = get_winners(42, SLICES)
-del SLICES
+WINNERS = get_winners(42, _SLICES)
 HASHES = get_hashes(3, 42)
+
+del _SLICES
 
 class ConnectFourBoard(Board):
 
@@ -81,15 +82,15 @@ class ConnectFourBoard(Board):
         self.check_winner()
 
     def pop(self):
-        last_action = self._actions.pop()
-        last_index = self._indices.pop()
-        self._board[last_index] = 0
-        self._legal_actions[last_action].append(last_index)
+        action = self._actions.pop()
+        index = self._indices.pop()
+        self._board[index] = 0
+        self._legal_actions[action].append(index)
         self.winner = None
         # turn depends on number of moves
         # decrement hash value after popping from actions
-        self._hash_value -= self.hash_calc(self.turn(), last_index)
-        return last_action
+        self._hash_value -= self.hash_calc(self.turn(), index)
+        return action
 
     def clear(self):
         self._board[:] = 0
