@@ -76,7 +76,7 @@ class ConnectFourBoard(Board):
         self._board[ind] = trn
         # turn depends on number of moves
         # increment hash value before appending to actions
-        self._hash_value += self.hash_calc(trn, ind)
+        self._hash_value ^= self.hash_calc(trn, ind)
         self._actions.append(action)
         self._indices.append(ind)
         self.check_winner()
@@ -89,7 +89,7 @@ class ConnectFourBoard(Board):
         self.winner = None
         # turn depends on number of moves
         # decrement hash value after popping from actions
-        self._hash_value -= self.hash_calc(self.turn(), index)
+        self._hash_value ^= self.hash_calc(self.turn(), index)
         return action
 
     def clear(self):
@@ -97,7 +97,7 @@ class ConnectFourBoard(Board):
         self._actions.clear()
         self._indices.clear()
         self._legal_actions = [list(range(i, -1, -7)) for i in range(35, 42)]
-        self._hash_value = 0
+        self._hash_value = self._hashes[0,0]
         self.winner = None
 
     def __str__(self):

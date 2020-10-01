@@ -30,7 +30,7 @@ def get_winners(size, slices):
     return tuple(tuple(slicess) for slicess in winners)
 
 def get_hashes(num_pieces, size):
-    """Return hash array. Multiples of num_pieces.
+    """Return array of size (num_pieces, size) of random uint64.
 
     Args
     ----
@@ -39,22 +39,21 @@ def get_hashes(num_pieces, size):
 
     Return
     ------
-    tuple
+    array - shape (num_pieces, size)
 
-    >>> get_hashes(3, 5)
-    >>> [1, 3, 9, 81, 727]
-    
     """
-    hashes = [1]
-    for _ in range(1, size):
-        hashes.append(hashes[-1] * num_pieces)
-    return tuple(hashes)
+    rng = np.random.default_rng()
+    max_uint64 = np.iinfo(np.uint64).max
+    result = rng.integers(max_uint64 + 1, size=(num_pieces, size), 
+                             dtype=np.uint64) 
+    result[0] = 0
+    return result
 
 class Board(ABC):
 
     _pieces = ()  # tuple of strs for each piece, called by __str__, __hash__
     _rows = ()    # tuple of slices, called by __repr__, __str__
-    _hashes = ()  # tuple of ints, called by append, pop
+    _hashes = np.array((1,1), dtype=np.uint64)  # array of ints, called by append, pop
 
     def __init__(self, size):
         """Construct board as flat array of length size.
@@ -68,7 +67,7 @@ class Board(ABC):
         # unsigned int < 256, numpy array very flexible
         self._board = np.zeros(size, dtype='uint8')
         self._actions = []
-        self._hash_value = 0
+        self._hash_value = self._hashes[0,0]
         self.winner = None
 
     @abstractmethod
@@ -186,9 +185,9 @@ class Board(ABC):
         return 0
 
     @classmethod
-    def hash_calc(cls, piece, position):
-        """Return hash value to place piece at position on board."""
-        return piece * cls._hashes[position]
+    def hash_calc(cls, piece, index):
+        """Return hash value to place piece at index on board."""
+        return cls._hashes[piece][index]
 
     def __hash__(self):
         """Return (nearly) unique value identifying board state.

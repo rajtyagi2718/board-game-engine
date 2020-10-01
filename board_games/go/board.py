@@ -245,7 +245,7 @@ class GoBoard(Board):
         if not self._liberties[friends[0]]:
             captures.append(self._capture(friends[0]))
 
-        # self._hash_value += self.hash_calc(trn, action)
+        self._hash_value ^= self.hash_calc(trn, action)
         action = Action(action, tuple(adjs), join, tuple(captures))
         self._actions.append(action)
         self.check_winner()
@@ -292,13 +292,13 @@ class GoBoard(Board):
         self._board[action.action] = 0
         self._legal_actions.add(action.action)
 
-        # self._hash_value -= self.hash_calc(self.turn(), last_action)
+        self._hash_value ^= self.hash_calc(self.turn(), action.action)
         return action.action
 
     def clear(self):
         self._board[:] = 0
         self._actions.clear()
-        self._hash_value = 0
+        self._hash_value = self._hashes[0,0]
         self.winner = None
 
         self._legal_actions = set(range(81))

@@ -281,16 +281,14 @@ class CheckersBoard(Board):
     def _add_piece(self, piece, index):
         """Update board, hash, indices with added piece."""
         self._board[index] = piece
-        # TODO zobrist hash
-        # self._hash_value += self.hash_calc(piece, index)
+        self._hash_value ^= self.hash_calc(piece, index)
         self._indices[piece].add(index)
 
     def _del_piece(self, index):
         """Update board, hash, indices with removed piece."""
         piece = self._board[index]
         self._board[index] = 0
-        # TODO zobrist hash
-        # self._hash_value -= self.hash_calc(piece, index)
+        self._hash_value ^= self.hash_calc(piece, index)
         self._indices[piece].remove(index)
 
     def append(self, action):

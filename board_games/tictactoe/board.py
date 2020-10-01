@@ -62,7 +62,7 @@ class TicTacToeBoard(Board):
         self._board[action] = trn
         # turn depends on number of moves
         # increment hash value before appending to actions
-        self._hash_value += self.hash_calc(trn, action)
+        self._hash_value ^= self.hash_calc(trn, action)
         self._actions.append(action)
         self._legal_actions.remove(action)
         self.check_winner()
@@ -74,14 +74,14 @@ class TicTacToeBoard(Board):
         self.winner = None
         # turn depends on number of moves
         # decrement hash value after popping from actions
-        self._hash_value -= self.hash_calc(self.turn(), action)
+        self._hash_value ^= self.hash_calc(self.turn(), action)
         return action
 
     def clear(self):
         self._board[:] = 0
         self._actions.clear()
         self._legal_actions = set(range(9))
-        self._hash_value = 0
+        self._hash_value = self._hashes[0,0]
         self.winner = None
 
     def __str__(self):
