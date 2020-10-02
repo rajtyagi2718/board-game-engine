@@ -74,6 +74,7 @@ class DisjointSet():
 
     def __eq__(self, other):
         """Return bool if current states equivalent."""
+        return False
         return (np.all(self._weight == other._weight) and 
                 np.all(self._parent == other._parent) and
                 len(self._updates) == len(other._updates) and
