@@ -1,4 +1,10 @@
-from board_games.base_class.board import get_winners, get_hashes, Board
+from board_games.base_class.board import (configure_logger, get_winners, 
+                                          get_hashes, Board)
+
+# configure logger
+import logging 
+logger = logging.getLogger(__name__)
+configure_logger(logger, 'tictactoe')
 
 """
 indices
@@ -66,6 +72,7 @@ class TicTacToeBoard(Board):
         self._actions.append(action)
         self._legal_actions.remove(action)
         self.check_winner()
+        logger.info(self._state())
 
     def pop(self):
         action = self._actions.pop()
@@ -75,6 +82,7 @@ class TicTacToeBoard(Board):
         # turn depends on number of moves
         # decrement hash value after popping from actions
         self._hash_value ^= self.hash_calc(self.turn(), action)
+        logger.info(self._state())
         return action
 
     def clear(self):

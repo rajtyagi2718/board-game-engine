@@ -12,7 +12,6 @@ from pathlib import Path
 from collections import deque
 
 GAMES = [TicTacToeGame, ConnectFourGame, CheckersGame, GoGame]
-GAMES = [GoGame]
 
 class GameTestCase(unittest.TestCase):
 
@@ -23,11 +22,11 @@ class GameTestCase(unittest.TestCase):
         with self.logger.open('w') as f:
             f.write('GAME TEST CASES')
 
-    def _test_compete(self):
+    def test_compete(self):
         for Game in GAMES:
             with self.subTest(game=Game.__name__):
                 game = Game(RandomAgent('random1'), RandomAgent('random2'))
-                game.compete(100)
+                game.compete(10)
                 self.assertEqual(game._agent1._record['wins'], 
                                  game._agent2._record['losses'])
                 self.assertEqual(game._agent1._record['losses'], 
@@ -41,7 +40,7 @@ class GameTestCase(unittest.TestCase):
                 GameUndo = GameUndoFactory(Game)
                 game = GameUndo(self,
                                 RandomAgent('random1'), RandomAgent('random2'))
-                for game_num in range(100):
+                for game_num in range(10):
                     print(game_num)
                     with self.subTest(game_num=game_num):
                         game.clear()
@@ -92,7 +91,6 @@ def GameUndoFactory(Game):
                         if board_cache:
                             cached = board_cache.pop()
                             if not self._board_eq_attrs(cached, self._board):
-                            # if cached != self._board:
                                 with self._test_case.logger.open('a') as f:
                                     f.write('\n\nFAILED UNDO')
                                     f.write('\nGAME NAME: %s' % self._name)

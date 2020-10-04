@@ -1,6 +1,13 @@
-from board_games.base_class.board import get_hashes, Board
+from board_games.base_class.board import (configure_logger, get_winners, 
+                                          get_hashes, Board)
 
 from collections import namedtuple
+
+# configure logger
+import logging 
+logger = logging.getLogger(__name__)
+configure_logger(logger, 'checkers')
+
 
 """
 indices
@@ -324,6 +331,8 @@ class CheckersBoard(Board):
         for piece in range(1, 5):
             for index in self._indices[piece]:
                 assert self._board[index] == piece
+
+        logger.info(self._state())
          
     def pop(self): 
         self.winner = None
@@ -344,6 +353,8 @@ class CheckersBoard(Board):
         if action.promotion:
             piece -= 2
         self._add_piece(piece, action.start)
+
+        logger.info(self._state())
 
         return action
 
