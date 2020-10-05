@@ -327,7 +327,7 @@ class CheckersBoard(Board):
             for index in self._indices[piece]:
                 assert self._board[index] == piece
 
-        LOGGER.info(self._state())
+        LOGGER.info(self._info())
          
     def pop(self): 
         self.winner = None
@@ -349,7 +349,7 @@ class CheckersBoard(Board):
             piece -= 2
         self._add_piece(piece, action.start)
 
-        LOGGER.info(self._state())
+        LOGGER.info(self._info())
 
         return action
 

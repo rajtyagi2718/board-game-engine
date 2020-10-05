@@ -251,6 +251,7 @@ class GoBoard(Board):
         action = Action(action, tuple(adjs), join, tuple(captures))
         self._actions.append(action)
         self.check_winner()
+        LOGGER.info(self._info())
 
     def _undo_capture(self, capture):
         for i, component, liberty in zip(capture.indices, capture.components, 
@@ -265,7 +266,6 @@ class GoBoard(Board):
                 self._liberties[captor].remove(i)
         
         self._groups.undo_atomize(capture.indices)
-        LOGGER.info(self._state())
 
     def _undo_join(self, join):
         root = join.friends[0]
@@ -279,7 +279,7 @@ class GoBoard(Board):
         action = self._actions.pop()
         if action is None:
             self.winner = None 
-            LOGGER.info(self._state())
+            LOGGER.info(self._info())
             return
 
         assert isinstance(action, Action), 'last action %s' % str(action)
@@ -297,7 +297,7 @@ class GoBoard(Board):
         self._legal_actions.add(action.action)
 
         self._hash_value ^= self.hash_calc(self.turn(), action.action)
-        LOGGER.info(self._state())
+        LOGGER.info(self._info())
         return action.action
 
     def clear(self):
@@ -338,9 +338,9 @@ class GoBoard(Board):
         result += '/'*23
         return result
 
-    def _state(self):
-        """Return string of state info for logger."""
-        result = super()._state() 
+    def _debug(self):
+        """Return string of state info for debugger."""
+        result = self._info() 
         groups = str(self._groups)
         groups = '\n'.join((' '.join(groups[i:i+9]) for i in range(0, 81, 9)))
         result += '\nCOMPONENTS:\n%s' % (groups)

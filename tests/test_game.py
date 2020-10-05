@@ -5,6 +5,7 @@ from board_games.go.game import GoGame
 from board_games.base_class.agent import RandomAgent
 from logs.log import get_logger
 
+import logging
 import unittest
 import random
 import copy
@@ -12,10 +13,9 @@ import numpy as np
 from pathlib import Path
 from collections import deque
 
-LOGGER = get_logger(__name__)
+LOGGER = get_logger(__name__, logging.DEBUG)
 
 GAMES = [TicTacToeGame, ConnectFourGame, CheckersGame, GoGame]
-GAMES = [TicTacToeGame]
 
 class GameTestCase(unittest.TestCase):
 
@@ -37,11 +37,7 @@ class GameTestCase(unittest.TestCase):
                 GameUndo = GameUndoFactory(Game)
                 game = GameUndo(self,
                                 RandomAgent('random1'), RandomAgent('random2'))
-                for game_num in range(10):
-                    print(game_num)
-                    with self.subTest(game_num=game_num):
-                        game.clear()
-                        game.test_run(step_prob=.7, cache_size=10)
+                game.runs(10, step_prob=.7, cache_size=10)
 
 def GameUndoFactory(Game):
     """Return extension of Game class with undo step method, testcase ref."""
@@ -51,6 +47,7 @@ def GameUndoFactory(Game):
         def __init__(self, test_case, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self._test_case = test_case
+            self._board_cache = deque()
 
         def undo(self):
             """Undo last action."""
@@ -69,56 +66,65 @@ def GameUndoFactory(Game):
                                     getattr(board2, attr))
                        for attr in board1.__dict__)
 
-        def test_run(self, step_prob, cache_size):
-            """Take steps or undo until board is terminal. Return winner."""
-            board_cache = deque() 
+        def runs(self, num_runs, step_prob, cache_size):
+            msg='STEP PROB: {}\tCACHE SIZE: {}'.format(step_prob, cache_size)
+            LOGGER.debug(self._debug() + '\n' + msg)
+            for r in range(num_runs):
+                with self._test_case.subTest(game_num=r):
+                    LOGGER.info('GAMES: {}'.format(r))
+                    self.clear()
+                    self.run(step_prob, cache_size)
 
+        def run(self, step_prob, cache_size):
+            self._board_cache.clear()
             while self._board:
                 with self._test_case.subTest(move_num=len(self._board)):
+                    LOGGER.info('MOVES: {}'.format(len(self._board)))
                     if random.random() < step_prob or not len(self._board):
-                        board_cache.append(copy.deepcopy(self._board))
-                        if len(board_cache) > cache_size:
-                            board_cache.popleft() 
+                        self._board_cache.append(copy.deepcopy(self._board))
+                        if len(self._board_cache) > cache_size:
+                            self._board_cache.popleft() 
                         self.step()
                         continue
 
                     last_action = self._board[-1] 
                     last_hash = hash(self._board)
                     self.undo()
-                    if not board_cache:
+                    if not self._board_cache:
                         continue
 
-                    cached = board_cache.pop()
+                    cached = self._board_cache.pop()
                     if not self._board_eq_attrs(cached, self._board):
-                        print('failed undo step', len(self._board))
+                        LOGGER.debug(self._debug_failed_undo_step(
+                            last_action, last_hash))
                         self._test_case.assertTrue(False,'undo failed')
                         break
-
-                        with self._test_case.logger.open('a') as f:
-                        
-                            f.write('\n\nFAILED UNDO')
-                            f.write('\nGAME NAME: %s' % self._name)
-                            actions = list(self._board) + [last_action]
-                            actions = '\n'.join('%d: %s' % (i, x) 
-                                for i, x in enumerate(actions))
-                            f.write('\nACTIONS:\n%s' % actions)
-                            f.write('\nBOARD CACHE:')
-                            board_cache.append(cached)
-                            for board in board_cache:
-                                f.write('\n\n%s' % board._state())
-
-                            f.write('\n\nBOARD UNDO:\n%s' % 
-                                self._board._state()) 
-                            hashes = [hash(board) 
-                                      for board in board_cache]
-                            hashes.append(last_hash)
-                            f.write('\n\nBOARD HASHES:\n%s' %
-                                    '\n'.join(str(x) for x in hashes))
-                            f.write('\n\nHASH ARRAY:\n%s' %
-                                    str(self._board._hashes))
-                            
                         
             self._update_records() 
             return self._board.winner
+
+        def _debug_failed_undo_step(last_action, last_hash):
+            """Return debug message with board cache details."""
+            msg = '\n\n' + self._debug()
+            msg += '\nFAILED UNDO'
+            actions = list(self._board) + [last_action]
+            actions = '\n'.join('%d: %s' % (i, x) 
+                for i, x in enumerate(actions))
+            msg += '\nACTIONS:\n{!s}'.format(actions)
+            msg += '\nBOARD CACHE:'
+            self._board_cache.append(cached)
+            for board in self._board_cache:
+                msg += '\n\n{!s}'.format(board._debug())
+            msg += '\n\nBOARD UNDO:\n{!s}'.format(self._board._debug())
+            hashes = [hash(board) 
+                      for board in self._board_cache]
+            hashes.append(last_hash)
+            msg += '\n\nBOARD HASHES:\n{!s}'.format(
+                '\n'.join(str(x) for x in hashes))
+            msg += '\n\nHASH ARRAY:\n{!s}'.format(self._board._hashes)
+            return msg
+
+        def _debug(self):
+            return 'GAME UNDO: {!r}'.format(self)
 
     return GameUndo

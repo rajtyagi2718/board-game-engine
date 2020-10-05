@@ -1,5 +1,8 @@
 from abc import ABC, abstractmethod
 import random 
+from logs.log import get_logger
+
+LOGGER = get_logger(__name__)
 
 class Agent(ABC):
 
@@ -35,15 +38,20 @@ class Agent(ABC):
     def update_record(self, utility):
         if utility < 0:
             self._record['losses'] += 1 
+            result = 'LOSSED'
         elif utility > 0:
             self._record['wins'] += 1 
+            result = 'WON'
         else:
             self._record['draws'] += 1
+            result = 'DREW'
+        LOGGER.info('{!r}\n{} GAME'.format(self, result))
 
     def clear(self):
         """Reset to initial state."""
         self._search.clear()
         self._record = dict.fromkeys(self._record, 0)
+        LOGGER.info('{!r}\n RECORD CLEARED'.format(self))
 
 class RandomAgent(Agent):
 

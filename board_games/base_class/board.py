@@ -226,11 +226,14 @@ class Board(ABC):
     def __str__(self):
         """Return string for command line interface."""
 
-    def _state(self):
+    def _info(self):
         """Return string of state info for logger."""
         result = 'MOVES: {}\tTURN: {}\tWINNER: {}\tHASH: {}'.format(
             len(self), self.turn(), self.winner, hash(self))
         result += '\nACTION: {!s}'.format(self[-1])
         result += '\nBOARD:\n{!s}'.format(self)
-        # result += '\nLEGAL ACTIONS: %s' % (str(self.legal_actions()))
         return result
+
+    def _debug(self):
+        """Return string of state info for debugger."""
+        return self._info()

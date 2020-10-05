@@ -4,7 +4,7 @@ import logging
 LOGDIR = Path('logs/')
 LOGDIR.mkdir(parents=True, exist_ok=True)
 LOGFORMATTER = logging.Formatter(fmt='%(asctime)s\t%(funcName)s\n%(message)s', 
-                                 datefmt='%a, %d %b %Y %H:%M:%S')
+                                 datefmt='%H:%M:%S')
 
 LOGGER = logging.getLogger('log')
 LOGGER.setLevel(logging.DEBUG)

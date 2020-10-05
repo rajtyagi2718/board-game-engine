@@ -95,7 +95,9 @@ class Game:
         self._agent1, self._agent2 = self._agent2, self._agent1
 
     def runs(self, num_runs):
-        for _ in range(num_runs):
+        LOGGER.info(self._info())
+        for r in range(num_runs):
+            LOGGER.info('GAMES: {}'.format(r))
             self.clear()
             self.run()
 
@@ -106,3 +108,5 @@ class Game:
         self.swap_agents()
         self.runs(num_runs-m)
 
+    def _info(self):
+        return 'GAME: {!r}'.format(self)
