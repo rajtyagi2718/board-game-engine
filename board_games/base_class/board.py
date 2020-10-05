@@ -1,23 +1,6 @@
 from abc import ABC, abstractmethod
 import numpy as np
 
-# configure logger
-from pathlib import Path
-logdir = Path('logs/')
-logdir.mkdir(parents=True, exist_ok=True)
-import logging 
-logger = logging.getLogger(__name__)
-logformatter = logging.Formatter(fmt='%(asctime)s\t%(funcName)s\n%(message)s', 
-                                 datefmt='%a, %d %b %Y %H:%M:%S')
-
-def configure_logger(logger, name):
-    """For concrete board module loggers, set level, add handler, formatter."""
-    logger.setLevel(logging.INFO) 
-    name += '.txt'
-    handler = logging.FileHandler(logdir / name, 'w')
-    handler.setFormatter(logformatter)
-    logger.addHandler(handler)
-
 def get_winners(size, slices):
     """Return subset of indices for each possible winning slice.
     

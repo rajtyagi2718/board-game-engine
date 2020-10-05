@@ -1,10 +1,7 @@
-from board_games.base_class.board import (configure_logger, get_winners, 
-                                          get_hashes, Board)
+from board_games.base_class.board import get_winners, get_hashes, Board
+from logs.log import get_logger
 
-# configure logger
-import logging 
-logger = logging.getLogger(__name__)
-configure_logger(logger, 'connectfour')
+LOGGER = get_logger(__name__)
 
 """
 indices
@@ -86,7 +83,7 @@ class ConnectFourBoard(Board):
         self._actions.append(action)
         self._indices.append(ind)
         self.check_winner()
-        logger.info(self._state())
+        LOGGER.info(self._state())
 
     def pop(self):
         action = self._actions.pop()
@@ -97,7 +94,7 @@ class ConnectFourBoard(Board):
         # turn depends on number of moves
         # decrement hash value after popping from actions
         self._hash_value ^= self.hash_calc(self.turn(), index)
-        logger.info(self._state())
+        LOGGER.info(self._state())
         return action
 
     def clear(self):

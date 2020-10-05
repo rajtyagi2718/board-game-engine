@@ -3,6 +3,7 @@ from board_games.connectfour.game import ConnectFourGame
 from board_games.checkers.game import CheckersGame
 from board_games.go.game import GoGame
 from board_games.base_class.agent import RandomAgent
+from logs.log import get_logger
 
 import unittest
 import random
@@ -11,16 +12,12 @@ import numpy as np
 from pathlib import Path
 from collections import deque
 
+LOGGER = get_logger(__name__)
+
 GAMES = [TicTacToeGame, ConnectFourGame, CheckersGame, GoGame]
+GAMES = [TicTacToeGame]
 
 class GameTestCase(unittest.TestCase):
-
-    def setUp(self):
-        dirpath = Path('data/')
-        dirpath.mkdir(parents=True, exist_ok=True)
-        self.logger = dirpath / 'game_test_log.txt' 
-        with self.logger.open('w') as f:
-            f.write('GAME TEST CASES')
 
     def test_compete(self):
         for Game in GAMES:
@@ -83,39 +80,43 @@ def GameUndoFactory(Game):
                         if len(board_cache) > cache_size:
                             board_cache.popleft() 
                         self.step()
+                        continue
 
-                    else:
-                        last_action = self._board[-1] 
-                        last_hash = hash(self._board)
-                        self.undo()
-                        if board_cache:
-                            cached = board_cache.pop()
-                            if not self._board_eq_attrs(cached, self._board):
-                                with self._test_case.logger.open('a') as f:
-                                    f.write('\n\nFAILED UNDO')
-                                    f.write('\nGAME NAME: %s' % self._name)
-                                    actions = list(self._board) + [last_action]
-                                    actions = '\n'.join('%d: %s' % (i, x) 
-                                        for i, x in enumerate(actions))
-                                    f.write('\nACTIONS:\n%s' % actions)
-                                    f.write('\nBOARD CACHE:')
-                                    board_cache.append(cached)
-                                    for board in board_cache:
-                                        f.write('\n\n%s' % board._state())
+                    last_action = self._board[-1] 
+                    last_hash = hash(self._board)
+                    self.undo()
+                    if not board_cache:
+                        continue
 
-                                    f.write('\n\nBOARD UNDO:\n%s' % 
-                                        self._board._state()) 
-                                    hashes = [hash(board) 
-                                              for board in board_cache]
-                                    hashes.append(last_hash)
-                                    f.write('\n\nBOARD HASHES:\n%s' %
-                                            '\n'.join(str(x) for x in hashes))
-                                    f.write('\n\nHASH ARRAY:\n%s' %
-                                            str(self._board._hashes))
-                                    
-                                print('failed undo step', len(self._board))
-                                self._test_case.assertTrue(False,'undo failed')
-                                break
+                    cached = board_cache.pop()
+                    if not self._board_eq_attrs(cached, self._board):
+                        print('failed undo step', len(self._board))
+                        self._test_case.assertTrue(False,'undo failed')
+                        break
+
+                        with self._test_case.logger.open('a') as f:
+                        
+                            f.write('\n\nFAILED UNDO')
+                            f.write('\nGAME NAME: %s' % self._name)
+                            actions = list(self._board) + [last_action]
+                            actions = '\n'.join('%d: %s' % (i, x) 
+                                for i, x in enumerate(actions))
+                            f.write('\nACTIONS:\n%s' % actions)
+                            f.write('\nBOARD CACHE:')
+                            board_cache.append(cached)
+                            for board in board_cache:
+                                f.write('\n\n%s' % board._state())
+
+                            f.write('\n\nBOARD UNDO:\n%s' % 
+                                self._board._state()) 
+                            hashes = [hash(board) 
+                                      for board in board_cache]
+                            hashes.append(last_hash)
+                            f.write('\n\nBOARD HASHES:\n%s' %
+                                    '\n'.join(str(x) for x in hashes))
+                            f.write('\n\nHASH ARRAY:\n%s' %
+                                    str(self._board._hashes))
+                            
                         
             self._update_records() 
             return self._board.winner

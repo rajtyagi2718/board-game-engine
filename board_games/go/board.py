@@ -1,15 +1,10 @@
-from board_games.base_class.board import (configure_logger, get_winners, 
-                                          get_hashes, Board)
+from board_games.base_class.board import get_winners, get_hashes, Board
+from logs.log import get_logger
 from board_games.go.utils import DisjointSet
-
-import numpy as np
 from collections import namedtuple, defaultdict
+import numpy as np
 
-# configure logger
-import logging 
-logger = logging.getLogger(__name__)
-configure_logger(logger, 'go')
-
+LOGGER = get_logger(__name__)
 
 """
 indices
@@ -270,7 +265,7 @@ class GoBoard(Board):
                 self._liberties[captor].remove(i)
         
         self._groups.undo_atomize(capture.indices)
-        logger.info(self._state())
+        LOGGER.info(self._state())
 
     def _undo_join(self, join):
         root = join.friends[0]
@@ -284,7 +279,7 @@ class GoBoard(Board):
         action = self._actions.pop()
         if action is None:
             self.winner = None 
-            logger.info(self._state())
+            LOGGER.info(self._state())
             return
 
         assert isinstance(action, Action), 'last action %s' % str(action)
@@ -302,7 +297,7 @@ class GoBoard(Board):
         self._legal_actions.add(action.action)
 
         self._hash_value ^= self.hash_calc(self.turn(), action.action)
-        logger.info(self._state())
+        LOGGER.info(self._state())
         return action.action
 
     def clear(self):

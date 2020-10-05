@@ -1,4 +1,6 @@
-# TODO logger
+from logs.log import get_logger
+
+LOGGER = get_logger(__name__)
 
 class Game:
     """
