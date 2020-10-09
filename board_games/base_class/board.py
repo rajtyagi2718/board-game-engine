@@ -230,10 +230,9 @@ class Board(ABC):
         """Return string of state info for logger."""
         result = 'MOVES: {}\tTURN: {}\tWINNER: {}\tHASH: {}'.format(
             len(self), self.turn(), self.winner, hash(self))
-        result += '\nACTION: {!s}'.format(self[-1])
         result += '\nBOARD:\n{!s}'.format(self)
         return result
 
     def _debug(self):
-        """Return string of state info for debugger."""
-        return self._info()
+        """Return string of state debug for logger. More detailed than info."""
+        return ''

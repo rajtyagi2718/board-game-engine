@@ -45,13 +45,13 @@ class Agent(ABC):
         else:
             self._record['draws'] += 1
             result = 'DREW'
-        LOGGER.info('{!r}\n{} GAME'.format(self, result))
+        LOGGER.info('{!r}\t{} GAME'.format(self, result))
 
     def clear(self):
         """Reset to initial state."""
         self._search.clear()
         self._record = dict.fromkeys(self._record, 0)
-        LOGGER.info('{!r}\n RECORD CLEARED'.format(self))
+        LOGGER.info('{!r}\tRECORD CLEARED'.format(self))
 
 class RandomAgent(Agent):
 
@@ -59,13 +59,13 @@ class RandomAgent(Agent):
         super().__init__(name, None) 
 
     def act(self, game):
-        actions = game.legal_actions()
-        # print('Actions:', *actions)
-        return random.choice(actions)
-        return random.choice(game.legal_actions()) 
+        action = random.choice(game.legal_actions())
+        LOGGER.info('{!r}\tACTION: {!s}'.format(self, action))
+        return action
 
     def clear(self):
         self._record = dict.fromkeys(self._record, 0)
+        LOGGER.info('{!r}\tRECORD CLEARED'.format(self))
 
 class TestAgent(Agent):
 
@@ -74,7 +74,10 @@ class TestAgent(Agent):
         self._actions = list(reversed(actions))
 
     def act(self, game):
-        return self._actions.pop()
+        action = self._actions.pop()
+        LOGGER.info('{!r}\tACTION: {!s}'.format(self, action))
+        return action
 
     def clear(self):
         self._record = dict.fromkeys(self._record, 0)
+        LOGGER.info('{!r}\tRECORD CLEARED'.format(self))

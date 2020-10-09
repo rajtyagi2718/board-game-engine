@@ -32,7 +32,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 board_games/go/game.py
-badd +93 board_games/base_class/game.py
+badd +1 board_games/base_class/game.py
 badd +1 board_games/tictactoe/game.py
 badd +1 board_games/connectfour/game.py
 badd +1 board_games/checkers/game.py
@@ -49,7 +49,9 @@ badd +17 ~/.vimrc
 badd +1 logs/log.py
 badd +11 log.py
 badd +1 logs/clean.py
-badd +0 board_games/base_class/agent.py
+badd +7 board_games/base_class/agent.py
+badd +2 board_game/base_class/trans_table.py
+badd +0 board_games/base_class/trans_table.py
 argglobal
 silent! argdel *
 $argadd ./
@@ -204,11 +206,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 8) / 17)
+let s:l = 2 - ((1 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+2
 normal! 0
 lcd ~/projects/board-game-engine
 wincmd w
@@ -327,12 +329,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 233 - ((10 * winheight(0) + 8) / 17)
+let s:l = 232 - ((9 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-233
-normal! 09|
+232
+normal! 0
 lcd ~/projects/board-game-engine
 wincmd w
 argglobal
@@ -450,11 +452,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 5) / 10)
+let s:l = 2 - ((1 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+2
 normal! 06|
 lcd ~/projects/board-game-engine
 wincmd w
@@ -989,12 +991,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 235 - ((7 * winheight(0) + 6) / 12)
+let s:l = 46 - ((7 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-235
-normal! 09|
+46
+normal! 0
 lcd ~/projects/board-game-engine
 wincmd w
 argglobal
@@ -1112,11 +1114,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 234 - ((7 * winheight(0) + 6) / 12)
+let s:l = 233 - ((6 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-234
+233
 normal! 09|
 lcd ~/projects/board-game-engine
 wincmd w
@@ -1358,12 +1360,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 86 - ((5 * winheight(0) + 6) / 12)
+let s:l = 1 - ((0 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-86
-normal! 09|
+1
+normal! 0
 lcd ~/projects/board-game-engine
 wincmd w
 argglobal
@@ -1481,12 +1483,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 395 - ((10 * winheight(0) + 5) / 11)
+let s:l = 1 - ((0 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-395
-normal! 016|
+1
+normal! 0
 lcd ~/projects/board-game-engine
 wincmd w
 argglobal
@@ -1604,15 +1606,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 344 - ((7 * winheight(0) + 6) / 12)
+let s:l = 2 - ((1 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-344
-normal! 014|
+2
+normal! 0
 lcd ~/projects/board-game-engine
 wincmd w
-6wincmd w
 exe '1resize ' . ((&lines * 12 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 79 + 73) / 146)
 exe '2resize ' . ((&lines * 12 + 20) / 40)
@@ -1763,12 +1764,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 11 - ((4 * winheight(0) + 9) / 18)
+let s:l = 16 - ((5 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-11
-normal! 043|
+16
+normal! 035|
 lcd ~/projects/board-game-engine
 wincmd w
 argglobal
@@ -2402,12 +2403,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 9) / 18)
+let s:l = 123 - ((15 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
-normal! 0
+123
+normal! 029|
 lcd ~/projects/board-game-engine
 wincmd w
 argglobal
@@ -2538,7 +2539,7 @@ exe 'vert 1resize ' . ((&columns * 79 + 73) / 146)
 exe '2resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 2resize ' . ((&columns * 79 + 73) / 146)
 exe 'vert 3resize ' . ((&columns * 66 + 73) / 146)
-tabedit ~/projects/board-game-engine/board_games/base_class/agent.py
+tabedit ~/projects/board-game-engine/board_games/base_class/trans_table.py
 set splitbelow splitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
@@ -2656,14 +2657,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 48 - ((27 * winheight(0) + 19) / 38)
+let s:l = 9 - ((8 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-48
-normal! 057|
+9
+normal! 09|
 lcd ~/projects/board-game-engine
-tabnext 2
+tabnext 5
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -1,8 +1,9 @@
+import numpy as np
+
 from board_games.base_class.board import get_winners, get_hashes, Board
 from logs.log import get_logger
 from board_games.go.utils import DisjointSet
 from collections import namedtuple, defaultdict
-import numpy as np
 
 LOGGER = get_logger(__name__)
 
@@ -339,9 +340,8 @@ class GoBoard(Board):
         return result
 
     def _debug(self):
-        """Return string of state info for debugger."""
-        result = self._info() 
+        action = 'ACTION: {!s}'.format(self[-1])
         groups = str(self._groups)
         groups = '\n'.join((' '.join(groups[i:i+9]) for i in range(0, 81, 9)))
-        result += '\nCOMPONENTS:\n%s' % (groups)
-        return result
+        groups = 'COMPONENTS:\n%s' % (groups)
+        return action + '\n' + groups

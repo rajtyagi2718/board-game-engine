@@ -12,7 +12,6 @@ LOGGER = get_logger(__name__, logging.DEBUG)
 class GoGameTestCase(unittest.TestCase):
 
     def test_capture(self):
-        LOGGER.debug('CAPTURE TEST CASES')
         CaptureSequence = namedtuple('capture_sequence', 
                                      'name actions1 actions2')
         capture_sequences = []
@@ -49,14 +48,12 @@ class GoGameTestCase(unittest.TestCase):
                 game.clear()
                 for _ in range(len(actions1) + len(actions2)):
                     with self.subTest(move_num=len(game._board)):
-                        LOGGER.debug('MOVES: {}'.format(len(game._board)))
                         game.step() 
                         LOGGER.debug(game._board._debug())
                         self._test_legal_state(game)
 
     def test_compete_legal_state(self):
         game = GoGame(RandomAgent('random1'), RandomAgent('random2'))
-        LOGGER.debug('COMPETE TEST CASES')
         for game_num in range(10):
             with self.subTest(game_num=game_num):
                 LOGGER.debug('GAMES: {}'.format(game_num))
@@ -68,7 +65,6 @@ class GoGameTestCase(unittest.TestCase):
                         self._test_legal_state(game)
 
     def test_repeated_state(self):
-        LOGGER.debug('REPEATED TEST CASES')
         RepeatedSequence = namedtuple('repeated_sequence', 
                                       'name actions1 actions2 illegal')
         repeated_sequences = []
