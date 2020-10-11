@@ -226,6 +226,8 @@ class Board(ABC):
     def __str__(self):
         """Return string for command line interface."""
 
+    # logger interface
+
     def _info(self):
         """Return string of state info for logger."""
         result = 'MOVES: {}\tTURN: {}\tWINNER: {}\tHASH: {}'.format(
@@ -236,3 +238,10 @@ class Board(ABC):
     def _debug(self):
         """Return string of state debug for logger. More detailed than info."""
         return ''
+
+    # agent interface
+
+    # @abstractmethod
+    def heuristic(self):
+        """Return array of values of board properties for linear approx."""
+        return np.array(self.board)

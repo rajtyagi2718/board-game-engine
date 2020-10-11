@@ -104,6 +104,8 @@ class Game:
         self.runs(m)
         self.swap_agents()
         self.runs(num_runs-m)
+        self.swap_agents()
 
     def _info(self):
-        return 'GAME: {!r}'.format(self)
+        return 'GAME: {!s}\nAGENT1: {!s}\nAGENT2: {!s}'.format(
+            self._name, self._agent1, self._agent2)

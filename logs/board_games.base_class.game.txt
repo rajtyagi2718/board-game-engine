@@ -1,0 +1,28 @@
+17:48:07	board_games.base_class.game	runs
+GAME: tictactoe
+AGENT1: minimax {'wins': 0, 'losses': 0, 'draws': 0}
+AGENT2: random2 {'wins': 0, 'losses': 0, 'draws': 0}
+17:48:07	board_games.base_class.game	runs
+GAMES: 0
+17:48:07	board_games.base_class.game	runs
+GAMES: 1
+17:48:07	board_games.base_class.game	runs
+GAMES: 2
+17:48:07	board_games.base_class.game	runs
+GAMES: 3
+17:48:07	board_games.base_class.game	runs
+GAMES: 4
+17:48:07	board_games.base_class.game	runs
+GAME: tictactoe
+AGENT1: random2 {'wins': 0, 'losses': 4, 'draws': 1}
+AGENT2: minimax {'wins': 4, 'losses': 0, 'draws': 1}
+17:48:07	board_games.base_class.game	runs
+GAMES: 0
+17:48:07	board_games.base_class.game	runs
+GAMES: 1
+17:48:07	board_games.base_class.game	runs
+GAMES: 2
+17:48:07	board_games.base_class.game	runs
+GAMES: 3
+17:48:07	board_games.base_class.game	runs
+GAMES: 4

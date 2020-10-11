@@ -1,10 +1,3 @@
-from board_games.tictactoe.game import TicTacToeGame
-from board_games.connectfour.game import ConnectFourGame
-from board_games.checkers.game import CheckersGame
-from board_games.go.game import GoGame
-from board_games.base_class.agent import RandomAgent
-from logs.log import get_logger
-
 import logging
 import unittest
 import random
@@ -12,6 +5,13 @@ import copy
 import numpy as np
 from pathlib import Path
 from collections import deque
+
+from board_games.tictactoe.game import TicTacToeGame
+from board_games.connectfour.game import ConnectFourGame
+from board_games.checkers.game import CheckersGame
+from board_games.go.game import GoGame
+from board_games.base_class.agent import RandomAgent
+from logs.log import get_logger
 
 LOGGER = get_logger(__name__, logging.DEBUG)
 

@@ -1,3 +1,5 @@
+import numpy as np
+
 from board_games.base_class.board import get_winners, get_hashes, Board
 from logs.log import get_logger
 
@@ -108,4 +110,35 @@ class TicTacToeBoard(Board):
             line += ' //'
             result += line + '\n'
         result += '/'*11
+        return result
+
+    # agent interface
+
+    _symm_scalars = np.geomspace(1, 3**8, 9, dtype=np.int16)
+
+    def _symm_boards(self):
+        """Yield boards symmetric to square board. Rigid motions."""
+        # identity
+        yield self._board
+
+        grid = self._board.reshape(3, 3)
+
+        # rotations
+        for i in range(1, 4):
+            yield np.rot90(grid, i).flatten()
+
+        # vertical, horizontal reflections
+        for i in range(2):
+            yield np.flip(grid, i).flatten()
+
+        # diagonal reflections
+        yield grid.transpose().flatten()
+        yield self._board[::-1].reshape(3, 3).transpose().flatten()
+
+    def heuristic(self):
+        """Enumerate all states mod symmetries. Return one hot vector."""
+        result = np.zeros(19557, dtype=np.bool)
+        minhash = min(board @ self._symm_scalars 
+                      for board in self._symm_boards())
+        result[minhash] = 1
         return result

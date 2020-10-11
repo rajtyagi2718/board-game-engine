@@ -1,9 +1,3 @@
-17:48:07	board_games.base_class.game	runs
-GAME: tictactoe
-AGENT1: minimax {'wins': 0, 'losses': 0, 'draws': 0}
-AGENT2: random2 {'wins': 0, 'losses': 0, 'draws': 0}
-17:48:07	board_games.base_class.game	runs
-GAMES: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -148,18 +142,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -168,8 +150,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 2874463983746569050
 BOARD:
@@ -290,16 +270,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 0.0)
-(3, 1.0)
-(4, 1.0)
-(5, 0.0)
-(6, 1.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 1243362079741073301
 BOARD:
@@ -308,8 +278,6 @@ BOARD:
 // x . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 2135741242240574989
 BOARD:
@@ -398,14 +366,6 @@ BOARD:
 // x . . //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, -1.0)
-(4, 1.0)
-(5, -1.0)
-(7, 0.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 982709168477516236
 BOARD:
@@ -414,8 +374,6 @@ BOARD:
 // x x . //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 638913105991091834
 BOARD:
@@ -472,12 +430,6 @@ BOARD:
 // x x o //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 0.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: 1	HASH: 891367161273992394
 BOARD:
@@ -486,12 +438,6 @@ BOARD:
 // x x o //
 // o . x //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 1, 'losses': 0, 'draws': 0}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	LOSSED GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -636,18 +582,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -656,8 +590,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 1494432558635206945
 BOARD:
@@ -778,16 +710,6 @@ BOARD:
 // . . o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(2, 1.0)
-(3, 0.0)
-(4, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 7143948709561726407
 BOARD:
@@ -796,8 +718,6 @@ BOARD:
 // . . o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 1514230784523900988
 BOARD:
@@ -886,14 +806,6 @@ BOARD:
 // . . o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 0.0)
-(4, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 4972894761170735091
 BOARD:
@@ -902,8 +814,6 @@ BOARD:
 // . x o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 7
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 1119673082851810444
 BOARD:
@@ -960,12 +870,6 @@ BOARD:
 // . x o //
 // . o . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(6, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: None	HASH: 1813976785910814794
 BOARD:
@@ -974,8 +878,6 @@ BOARD:
 // x x o //
 // . o . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 8	TURN: 1	WINNER: None	HASH: 1571307840651012580
 BOARD:
@@ -1000,10 +902,6 @@ BOARD:
 // x x o //
 // o o . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 9	TURN: 2	WINNER: 0	HASH: 3552580926403095395
 BOARD:
@@ -1012,12 +910,6 @@ BOARD:
 // x x o //
 // o o x //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 1, 'losses': 0, 'draws': 1}	DREW GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 1, 'draws': 1}	DREW GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -1162,18 +1054,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -1182,8 +1062,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 1}	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 9016488763330383672
 BOARD:
@@ -1304,16 +1182,6 @@ BOARD:
 // . . . //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(2, 1.0)
-(3, -1.0)
-(4, 0.0)
-(5, 0.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 6066747213027605404
 BOARD:
@@ -1322,8 +1190,6 @@ BOARD:
 // . . . //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 811693078727429358
 BOARD:
@@ -1412,14 +1278,6 @@ BOARD:
 // . . . //
 // o . o //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 1.0)
-(3, -1.0)
-(4, -1.0)
-(5, -1.0)
-(7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: 1	HASH: 6690831115592314931
 BOARD:
@@ -1428,12 +1286,6 @@ BOARD:
 // . . . //
 // o . o //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 2, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -1578,18 +1430,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -1598,8 +1438,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 1056687493935834932
 BOARD:
@@ -1720,16 +1558,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(3, 1.0)
-(4, 0.0)
-(5, 0.0)
-(6, 1.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 6345415020449539044
 BOARD:
@@ -1738,8 +1566,6 @@ BOARD:
 // x . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 8425552339084792445
 BOARD:
@@ -1828,14 +1654,6 @@ BOARD:
 // x . . //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(4, 1.0)
-(5, -1.0)
-(7, -1.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 2660913410667300274
 BOARD:
@@ -1844,8 +1662,6 @@ BOARD:
 // x x . //
 // o . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 1990496862138610381
 BOARD:
@@ -1902,12 +1718,6 @@ BOARD:
 // x x . //
 // o . o //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (5, 1.0)
-(1, -1.0)
-(7, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: 1	HASH: 8029519981889690129
 BOARD:
@@ -1916,12 +1726,6 @@ BOARD:
 // x x x //
 // o . o //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 3, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -2066,18 +1870,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -2086,8 +1878,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 1494432558635206945
 BOARD:
@@ -2208,16 +1998,6 @@ BOARD:
 // . . o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(2, 1.0)
-(3, 0.0)
-(4, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 7143948709561726407
 BOARD:
@@ -2226,8 +2006,6 @@ BOARD:
 // . . o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 682435136244490776
 BOARD:
@@ -2316,14 +2094,6 @@ BOARD:
 // . o o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(1, 1.0)
-(6, -1.0)
-(7, -1.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 2296015428976060118
 BOARD:
@@ -2332,8 +2102,6 @@ BOARD:
 // x o o //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 6967008295026938279
 BOARD:
@@ -2390,12 +2158,6 @@ BOARD:
 // x o o //
 // . . o //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(6, 1.0)
-(7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: 1	HASH: 5314145930923336963
 BOARD:
@@ -2404,18 +2166,6 @@ BOARD:
 // x o o //
 // . . o //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 4, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.game	runs
-GAME: tictactoe
-AGENT1: random2 {'wins': 0, 'losses': 4, 'draws': 1}
-AGENT2: minimax {'wins': 4, 'losses': 0, 'draws': 1}
-17:48:07	board_games.base_class.game	runs
-GAMES: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 2958982260352758948
 BOARD:
@@ -2552,17 +2302,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(2, 0.0)
-(3, 1.0)
-(4, 0.0)
-(5, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 6296808673500547564
 BOARD:
@@ -2571,8 +2310,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 70913958796260667
 BOARD:
@@ -2677,15 +2414,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, -1.0)
-(4, 0.0)
-(5, 1.0)
-(6, -1.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 2238386810105814837
 BOARD:
@@ -2694,8 +2422,6 @@ BOARD:
 // o . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 591445394699410922
 BOARD:
@@ -2768,13 +2494,6 @@ BOARD:
 // o . . //
 // x . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (4, -1.0)
-(5, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 7091239597027953205
 BOARD:
@@ -2783,8 +2502,6 @@ BOARD:
 // o o . //
 // x . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: None	HASH: 498212323666069648
 BOARD:
@@ -2825,11 +2542,6 @@ BOARD:
 // o o . //
 // x . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (5, -1.0)
-(7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 8	TURN: 1	WINNER: 2	HASH: 2563860637414948661
 BOARD:
@@ -2838,14 +2550,6 @@ BOARD:
 // o o o //
 // x . x //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 5, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 1
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 1631828062720361678
 BOARD:
@@ -2982,17 +2686,6 @@ BOARD:
 // x . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 1.0)
-(2, 1.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 637191634889308553
 BOARD:
@@ -3001,8 +2694,6 @@ BOARD:
 // x . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 2256003885420168536
 BOARD:
@@ -3107,15 +2798,6 @@ BOARD:
 // x . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(4, 0.0)
-(5, 0.0)
-(6, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 8436076841765081735
 BOARD:
@@ -3124,8 +2806,6 @@ BOARD:
 // x o . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	ACTION: 7
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 3823339146221343919
 BOARD:
@@ -3198,13 +2878,6 @@ BOARD:
 // x o . //
 // . x . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(5, 0.0)
-(6, 0.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: 2	HASH: 756013534427915232
 BOARD:
@@ -3213,14 +2886,6 @@ BOARD:
 // x o . //
 // . x o //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 6, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 2
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5891801927411646113
 BOARD:
@@ -3357,17 +3022,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(2, 1.0)
-(3, 1.0)
-(4, 0.0)
-(5, 1.0)
-(6, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 4296427478769297790
 BOARD:
@@ -3376,8 +3030,6 @@ BOARD:
 // . o . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 866617445085271466
 BOARD:
@@ -3482,15 +3134,6 @@ BOARD:
 // . o . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 0.0)
-(3, 1.0)
-(5, 1.0)
-(6, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 1882804372811659364
 BOARD:
@@ -3499,8 +3142,6 @@ BOARD:
 // . o . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 4513228298429545187
 BOARD:
@@ -3573,13 +3214,6 @@ BOARD:
 // . o . //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(5, -1.0)
-(6, 1.0)
-(7, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 2007653137054027110
 BOARD:
@@ -3588,8 +3222,6 @@ BOARD:
 // . o o //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 3
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: None	HASH: 7888607930784401813
 BOARD:
@@ -3630,11 +3262,6 @@ BOARD:
 // x o o //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (6, 0.0)
-(7, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 7
 17:48:07	board_games.tictactoe.board	append
 MOVES: 8	TURN: 1	WINNER: 2	HASH: 2878735651160890090
 BOARD:
@@ -3643,14 +3270,6 @@ BOARD:
 // x o o //
 // . o x //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 7, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 3
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 5764859930267457487
 BOARD:
@@ -3787,17 +3406,6 @@ BOARD:
 // . x . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 1.0)
-(2, 0.0)
-(3, 1.0)
-(5, 1.0)
-(6, 0.0)
-(7, 1.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 3346822137446066823
 BOARD:
@@ -3806,8 +3414,6 @@ BOARD:
 // . x . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 788526446778607680
 BOARD:
@@ -3912,15 +3518,6 @@ BOARD:
 // . x . //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(2, 0.0)
-(3, 1.0)
-(5, 1.0)
-(6, 0.0)
-(7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 3861996858940125620
 BOARD:
@@ -3929,8 +3526,6 @@ BOARD:
 // . x . //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 197583528631956340
 BOARD:
@@ -4003,13 +3598,6 @@ BOARD:
 // . x . //
 // x . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(5, 1.0)
-(7, 0.0)
-(1, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: 2	HASH: 1484554330531438234
 BOARD:
@@ -4018,14 +3606,6 @@ BOARD:
 // . x . //
 // x . x //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 8, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.game	runs
-GAMES: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 1
 17:48:07	board_games.tictactoe.board	append
 MOVES: 1	TURN: 2	WINNER: None	HASH: 2958982260352758948
 BOARD:
@@ -4162,17 +3742,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(2, 0.0)
-(3, 1.0)
-(4, 0.0)
-(5, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
 17:48:07	board_games.tictactoe.board	append
 MOVES: 2	TURN: 1	WINNER: None	HASH: 6296808673500547564
 BOARD:
@@ -4181,8 +3750,6 @@ BOARD:
 // . . . //
 // . . . //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 8
 17:48:07	board_games.tictactoe.board	append
 MOVES: 3	TURN: 2	WINNER: None	HASH: 1432680694400076630
 BOARD:
@@ -4287,15 +3854,6 @@ BOARD:
 // . . . //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 1.0)
-(3, 1.0)
-(4, 0.0)
-(5, 1.0)
-(6, 0.0)
-(7, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
 17:48:07	board_games.tictactoe.board	append
 MOVES: 4	TURN: 1	WINNER: None	HASH: 1854919153699691668
 BOARD:
@@ -4304,8 +3862,6 @@ BOARD:
 // . o . //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 5
 17:48:07	board_games.tictactoe.board	append
 MOVES: 5	TURN: 2	WINNER: None	HASH: 958352599058494553
 BOARD:
@@ -4378,13 +3934,6 @@ BOARD:
 // . o x //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(6, 1.0)
-(7, 1.0)
-(2, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
 17:48:07	board_games.tictactoe.board	append
 MOVES: 6	TURN: 1	WINNER: None	HASH: 1307514566795963866
 BOARD:
@@ -4393,8 +3942,6 @@ BOARD:
 // . o x //
 // . . x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 7
 17:48:07	board_games.tictactoe.board	append
 MOVES: 7	TURN: 2	WINNER: None	HASH: 1313067643176315908
 BOARD:
@@ -4435,11 +3982,6 @@ BOARD:
 // . o x //
 // . x x //
 ///////////
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(6, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 6
 17:48:07	board_games.tictactoe.board	append
 MOVES: 8	TURN: 1	WINNER: 2	HASH: 2223114044076431982
 BOARD:
@@ -4448,7 +3990,3 @@ BOARD:
 // . o x //
 // o x x //
 ///////////
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 9, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 9, 'losses': 0, 'draws': 1}	WON GAME

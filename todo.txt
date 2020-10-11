@@ -1,0 +1,3 @@
+test heuristic agent in tictactoe
+minimax transtable
+minimax agent
