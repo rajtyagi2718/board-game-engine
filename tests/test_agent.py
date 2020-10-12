@@ -17,3 +17,11 @@ class AgentTestCase(unittest.TestCase):
                 game = Game(HeuristicAgent('minimax'), RandomAgent('random2'))
                 game.compete(10)
                 self.assertEqual(game._agent1._record['losses'], 0)
+                
+                game = Game(HeuristicAgent('minimax1'), 
+                            HeuristicAgent('minimax2'))
+                game.compete(10)
+                self.assertEqual(game._agent1._record['wins'], 0)
+                self.assertEqual(game._agent1._record['losses'], 0)
+                self.assertEqual(game._agent2._record['wins'], 0)
+                self.assertEqual(game._agent2._record['losses'], 0)

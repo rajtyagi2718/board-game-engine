@@ -9,7 +9,7 @@ class TransTable:
         # set default values: random values, zero depth, TODO: bounds?
         self.rng = np.random.default_rng()
         # random floats (-1, 1)
-        self._table[:,0] = self.rng.random(size) * self.rng.choice([-1,1],size)
+        self._table[:,0] = self.rng.random(size) * self.rng.choice((-1,1),size)
 
     def __len__(self):
         return len(self._table)
@@ -26,4 +26,4 @@ class TransTable:
 
     def clear(self):
         self._table[:] = 0
-        self._table[:,0] = self.rng.random(size) * self.rng.choice([-1,1],size)
+        self._table[:,0] = self.rng.random(size) * self.rng.choice((-1,1),size)

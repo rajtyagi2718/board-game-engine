@@ -1,28 +1,1288 @@
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	runs
 GAME: tictactoe
 AGENT1: minimax {'wins': 0, 'losses': 0, 'draws': 0}
 AGENT2: random2 {'wins': 0, 'losses': 0, 'draws': 0}
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	runs
 GAMES: 0
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 519111634970440835
+BOARD:
+///////////
+// x . . //
+// . . . //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 5231136677138883538
+BOARD:
+///////////
+// x x . //
+// . . . //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 8199999100656559623
+BOARD:
+///////////
+// x x . //
+// . . . //
+// o . o //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: 1	HASH: 1721569926554673872
+BOARD:
+///////////
+// x x x //
+// . . . //
+// o . o //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAMES: 1
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 4231195096025448976
+BOARD:
+///////////
+// x . . //
+// . . o //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 2058207165681338083
+BOARD:
+///////////
+// x . x //
+// . . o //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 275843741195641299
+BOARD:
+///////////
+// x o x //
+// . . o //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 7375539806595161050
+BOARD:
+///////////
+// x o x //
+// . x o //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 1438136139191511792
+BOARD:
+///////////
+// x o x //
+// . x o //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: 1	HASH: 9140366938716403487
+BOARD:
+///////////
+// x o x //
+// . x o //
+// o . x //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAMES: 2
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 2302374048098036884
+BOARD:
+///////////
+// x x . //
+// . o . //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: 1	HASH: 6474960174327490624
+BOARD:
+///////////
+// x x x //
+// . o . //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAMES: 3
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 998076124493718088
+BOARD:
+///////////
+// x o . //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 578327335556310195
+BOARD:
+///////////
+// x o . //
+// x . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 2137176788458640798
+BOARD:
+///////////
+// x o . //
+// x . . //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 8655943759620026263
+BOARD:
+///////////
+// x o . //
+// x x . //
+// o . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 2473000550792751128
+BOARD:
+///////////
+// x o . //
+// x x . //
+// o o . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: 1	HASH: 654331042570712565
+BOARD:
+///////////
+// x o . //
+// x x x //
+// o o . //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAMES: 4
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 6549609243661955282
+BOARD:
+///////////
+// x . o //
+// . . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 2250572416697873981
+BOARD:
+///////////
+// x . o //
+// x . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 8582097476653478241
+BOARD:
+///////////
+// x . o //
+// x . o //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: 1	HASH: 1145695683528484921
+BOARD:
+///////////
+// x . o //
+// x . o //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAME: tictactoe
-AGENT1: random2 {'wins': 0, 'losses': 4, 'draws': 1}
-AGENT2: minimax {'wins': 4, 'losses': 0, 'draws': 1}
-17:48:07	board_games.base_class.game	runs
+AGENT1: random2 {'wins': 0, 'losses': 5, 'draws': 0}
+AGENT2: minimax {'wins': 5, 'losses': 0, 'draws': 0}
+19:13:20	board_games.base_class.game	runs
 GAMES: 0
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5034814753504249583
+BOARD:
+///////////
+// . . . //
+// x . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 5307141415618449899
+BOARD:
+///////////
+// o . . //
+// x . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 435224774205867596
+BOARD:
+///////////
+// o x . //
+// x . . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 8169860987754301721
+BOARD:
+///////////
+// o x . //
+// x o . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 693208272835432529
+BOARD:
+///////////
+// o x . //
+// x o . //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: 2	HASH: 1209851929035707805
+BOARD:
+///////////
+// o x . //
+// x o . //
+// x . o //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAMES: 1
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 7316326343440906761
+BOARD:
+///////////
+// . . . //
+// . x . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 7633972607239810317
+BOARD:
+///////////
+// o . . //
+// . x . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 1229123895786370141
+BOARD:
+///////////
+// o . . //
+// . x . //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 1833102859739201995
+BOARD:
+///////////
+// o . o //
+// . x . //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 2066936729163941680
+BOARD:
+///////////
+// o . o //
+// x x . //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 1480879014894829689
+BOARD:
+///////////
+// o . o //
+// x x o //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 4260926148565604315
+BOARD:
+///////////
+// o x o //
+// x x o //
+// x . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: 2	HASH: 177150473388970510
+BOARD:
+///////////
+// o x o //
+// x x o //
+// x . o //
+///////////
+19:13:20	board_games.base_class.game	runs
 GAMES: 2
-17:48:07	board_games.base_class.game	runs
+19:13:20	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 7316326343440906761
+BOARD:
+///////////
+// . . . //
+// . x . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 7633972607239810317
+BOARD:
+///////////
+// o . . //
+// . x . //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 4806514926023586016
+BOARD:
+///////////
+// o . . //
+// . x x //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 6400472429006794710
+BOARD:
+///////////
+// o . . //
+// o x x //
+// . . . //
+///////////
+19:13:20	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 2232389885220678430
+BOARD:
+///////////
+// o . x //
+// o x x //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: 2	HASH: 7734208431882639912
+BOARD:
+///////////
+// o . x //
+// o x x //
+// o . . //
+///////////
+19:13:21	board_games.base_class.game	runs
 GAMES: 3
-17:48:07	board_games.base_class.game	runs
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 7316326343440906761
+BOARD:
+///////////
+// . . . //
+// . x . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 7633972607239810317
+BOARD:
+///////////
+// o . . //
+// . x . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7146124355968853030
+BOARD:
+///////////
+// o . . //
+// . x . //
+// . x . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 2049107961265570609
+BOARD:
+///////////
+// o o . //
+// . x . //
+// . x . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 8161567794885549790
+BOARD:
+///////////
+// o o . //
+// . x . //
+// . x x //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: 2	HASH: 8736264572683660096
+BOARD:
+///////////
+// o o o //
+// . x . //
+// . x x //
+///////////
+19:13:21	board_games.base_class.game	runs
 GAMES: 4
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 782909035524196651
+BOARD:
+///////////
+// . . . //
+// . . . //
+// . x . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 1557882040840334891
+BOARD:
+///////////
+// . o . //
+// . . . //
+// . x . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 3726364138169887464
+BOARD:
+///////////
+// . o x //
+// . . . //
+// . x . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 439333107769547740
+BOARD:
+///////////
+// . o x //
+// . . . //
+// o x . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 3113255479446275629
+BOARD:
+///////////
+// . o x //
+// . . . //
+// o x x //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 4834225806597833073
+BOARD:
+///////////
+// . o x //
+// . . o //
+// o x x //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 489167868320941982
+BOARD:
+///////////
+// . o x //
+// x . o //
+// o x x //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1270798487194781894
+BOARD:
+///////////
+// . o x //
+// x o o //
+// o x x //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 232197507604860308
+BOARD:
+///////////
+// x o x //
+// x o o //
+// o x x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAME: tictactoe
+AGENT1: minimax1 {'wins': 0, 'losses': 0, 'draws': 0}
+AGENT2: minimax2 {'wins': 0, 'losses': 0, 'draws': 0}
+19:13:21	board_games.base_class.game	runs
+GAMES: 0
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 1
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 2
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 3
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 4
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAME: tictactoe
+AGENT1: minimax2 {'wins': 0, 'losses': 0, 'draws': 5}
+AGENT2: minimax1 {'wins': 0, 'losses': 0, 'draws': 5}
+19:13:21	board_games.base_class.game	runs
+GAMES: 0
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 1
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 2
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 3
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////
+19:13:21	board_games.base_class.game	runs
+GAMES: 4
+19:13:21	board_games.base_class.game	step
+MOVES: 1	TURN: 2	WINNER: None	HASH: 5952111753266300236
+BOARD:
+///////////
+// x . . //
+// . . . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 2	TURN: 1	WINNER: None	HASH: 428178357248248342
+BOARD:
+///////////
+// x . . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 3	TURN: 2	WINNER: None	HASH: 7664506084895546814
+BOARD:
+///////////
+// x x . //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 4	TURN: 1	WINNER: None	HASH: 7071512678183512096
+BOARD:
+///////////
+// x x o //
+// . o . //
+// . . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 5	TURN: 2	WINNER: None	HASH: 1935676307036811642
+BOARD:
+///////////
+// x x o //
+// . o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 6	TURN: 1	WINNER: None	HASH: 52854901986799176
+BOARD:
+///////////
+// x x o //
+// o o . //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 7	TURN: 2	WINNER: None	HASH: 864336230662763442
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x . . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 8	TURN: 1	WINNER: None	HASH: 1265361007951655975
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o . //
+///////////
+19:13:21	board_games.base_class.game	step
+MOVES: 9	TURN: 2	WINNER: 0	HASH: 8981063169952033236
+BOARD:
+///////////
+// x x o //
+// o o x //
+// x o x //
+///////////

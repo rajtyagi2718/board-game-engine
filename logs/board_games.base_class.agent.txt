@@ -1,4 +1,4 @@
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (0, 0.0)
 (1, 0.0)
 (2, 0.0)
@@ -8,109 +8,11 @@ minimax	ACTION-VALUES: (0, 0.0)
 (6, 0.0)
 (7, 0.0)
 (8, 0.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 1
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 0.0)
-(3, 1.0)
-(4, 1.0)
-(5, 0.0)
-(6, 1.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 6
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, -1.0)
-(4, 1.0)
-(5, -1.0)
-(7, 0.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 5
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 0.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 8
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 1, 'losses': 0, 'draws': 0}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	LOSSED GAME
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 5
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(2, 1.0)
-(3, 0.0)
-(4, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 1
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 0.0)
-(4, 1.0)
-(6, 1.0)
-(7, 0.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 7
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(6, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 6
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 8
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 1, 'losses': 0, 'draws': 1}	DREW GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 1, 'draws': 1}	DREW GAME
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 1}	ACTION: 6
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (1, 1.0)
 (2, 1.0)
 (3, -1.0)
@@ -118,23 +20,23 @@ minimax	ACTION-VALUES: (1, 1.0)
 (5, 0.0)
 (7, 0.0)
 (8, 1.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 1
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 1, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 0, 'draws': 0}	ACTION: 8
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (2, 1.0)
 (3, -1.0)
 (4, -1.0)
 (5, -1.0)
 (7, 1.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 2
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 2, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 1, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 1, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (0, 0.0)
 (1, 0.0)
 (2, 0.0)
@@ -144,57 +46,11 @@ minimax	ACTION-VALUES: (0, 0.0)
 (6, 0.0)
 (7, 0.0)
 (8, 0.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(3, 1.0)
-(4, 0.0)
-(5, 0.0)
-(6, 1.0)
-(7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	ACTION: 6
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, -1.0)
-(4, 1.0)
-(5, -1.0)
-(7, -1.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 2, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (5, 1.0)
-(1, -1.0)
-(7, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 5
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 3, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 0.0)
-(2, 0.0)
-(3, 0.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 0.0)
-(8, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	ACTION: 5
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 5
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (1, -1.0)
 (2, 1.0)
 (3, 0.0)
@@ -202,158 +58,192 @@ minimax	ACTION-VALUES: (1, -1.0)
 (6, 1.0)
 (7, 0.0)
 (8, 0.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(1, 1.0)
-(6, -1.0)
-(7, -1.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 3, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(6, 1.0)
-(7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 4, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 1
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(2, 0.0)
-(3, 1.0)
-(4, 0.0)
-(5, 1.0)
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 1
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (3, 0.0)
+(4, 1.0)
 (6, 1.0)
 (7, 0.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, -1.0)
-(4, 0.0)
-(5, 1.0)
-(6, -1.0)
+(8, -1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 4
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 1, 'draws': 0}	ACTION: 6
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (3, 0.0)
 (7, 0.0)
 (8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 3
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 6
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (4, -1.0)
-(5, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 4, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (5, -1.0)
-(7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 5
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 5, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	ACTION: 3
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(1, 1.0)
-(2, 1.0)
-(4, 0.0)
-(5, 0.0)
-(6, 0.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(4, 0.0)
-(5, 0.0)
-(6, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 5, 'draws': 1}	ACTION: 7
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(5, 0.0)
-(6, 0.0)
-(8, -1.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 8
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 6, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 1.0)
-(2, 1.0)
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 2, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 2, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 0
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 2, 'draws': 0}	ACTION: 4
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 1
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 2, 'draws': 0}	ACTION: 6
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (2, 1.0)
+(3, -1.0)
+(5, -1.0)
+(7, -1.0)
+(8, -1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 2
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 3, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 3, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 0
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 3, 'draws': 0}	ACTION: 1
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(4, 1.0)
+(5, 0.0)
+(6, 1.0)
+(7, 0.0)
+(8, 0.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 3
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 3, 'draws': 0}	ACTION: 6
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (2, -1.0)
+(4, 1.0)
+(5, -1.0)
+(7, 0.0)
+(8, -1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 4
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 3, 'draws': 0}	ACTION: 7
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (5, 1.0)
+(2, -1.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 5
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 4, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 4, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 0
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 4, 'draws': 0}	ACTION: 2
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (1, -1.0)
 (3, 1.0)
 (4, 0.0)
-(5, 1.0)
+(5, 0.0)
 (6, 1.0)
+(7, 0.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 3
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 4, 'draws': 0}	ACTION: 5
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (1, -1.0)
+(4, -1.0)
+(6, 1.0)
+(7, -1.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 6
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 5, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 5, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 5, 'draws': 0}	ACTION: 3
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 0.0)
+(1, 1.0)
+(2, 1.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
 (7, 1.0)
 (8, 1.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 0
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 5, 'draws': 0}	ACTION: 1
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (2, 1.0)
+(4, 0.0)
+(5, 0.0)
+(6, 1.0)
+(7, 0.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (1, 0.0)
-(3, 1.0)
-(5, 1.0)
-(6, 1.0)
-(7, 1.0)
-(8, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(5, -1.0)
-(6, 1.0)
-(7, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 5
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 6, 'draws': 1}	ACTION: 3
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (6, 0.0)
-(7, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 7
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 7, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	ACTION: 4
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 5, 'draws': 0}	ACTION: 6
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (2, 0.0)
+(5, 0.0)
+(7, 0.0)
+(8, -1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 8
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 6, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 6, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 6, 'draws': 0}	ACTION: 4
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (0, 0.0)
 (1, 1.0)
 (2, 0.0)
@@ -362,73 +252,916 @@ minimax	ACTION-VALUES: (0, 0.0)
 (6, 0.0)
 (7, 1.0)
 (8, 0.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 6, 'draws': 0}	ACTION: 6
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (1, 1.0)
 (2, 0.0)
 (3, 1.0)
 (5, 1.0)
-(6, 0.0)
 (7, 1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 7, 'draws': 1}	ACTION: 6
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(5, 1.0)
-(7, 0.0)
-(1, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 1
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 8, 'losses': 0, 'draws': 1}	WON GAME
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 1
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (0, 0.0)
-(2, 0.0)
-(3, 1.0)
-(4, 0.0)
-(5, 1.0)
-(6, 1.0)
-(7, 0.0)
 (8, 1.0)
-17:48:07	board_games.base_class.agent	act
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 2
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 6, 'draws': 0}	ACTION: 3
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (5, -1.0)
+(1, -1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 5
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 6, 'draws': 0}	ACTION: 1
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (7, 0.0)
+(8, -1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 8
+19:13:20	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 7, 'draws': 0}	LOSSED GAME
+19:13:20	board_games.base_class.agent	update_record
+minimax {'wins': 7, 'losses': 0, 'draws': 0}	WON GAME
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 7, 'draws': 0}	ACTION: 4
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 0.0)
+(1, 1.0)
+(2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 0.0)
+(7, 1.0)
+(8, 0.0)
+19:13:20	board_games.base_class.agent	act
 minimax	ACTION: 0
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 8
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (2, 1.0)
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 7, 'draws': 0}	ACTION: 5
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 0.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 3
+19:13:20	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 7, 'draws': 0}	ACTION: 2
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (1, 1.0)
+(6, -1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:20	board_games.base_class.agent	act
+minimax	ACTION: 6
+19:13:21	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 8, 'draws': 0}	LOSSED GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax {'wins': 8, 'losses': 0, 'draws': 0}	WON GAME
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 8, 'draws': 0}	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 0.0)
+(1, 1.0)
+(2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 0.0)
+(7, 1.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 8, 'draws': 0}	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (1, 0.0)
+(2, 1.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 8, 'draws': 0}	ACTION: 8
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (3, 1.0)
+(2, -1.0)
+(5, 1.0)
+(6, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 2
+19:13:21	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 9, 'draws': 0}	LOSSED GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax {'wins': 9, 'losses': 0, 'draws': 0}	WON GAME
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 9, 'draws': 0}	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (0, 1.0)
+(1, 0.0)
+(2, 1.0)
 (3, 1.0)
 (4, 0.0)
 (5, 1.0)
 (6, 0.0)
-(7, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 4
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 5
-17:48:07	board_games.base_class.agent	act
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 9, 'draws': 0}	ACTION: 2
+19:13:21	board_games.base_class.agent	act
 minimax	ACTION-VALUES: (3, 1.0)
+(4, 1.0)
+(5, 1.0)
+(6, 0.0)
+(0, 1.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 9, 'draws': 0}	ACTION: 8
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (3, 1.0)
+(4, 1.0)
+(5, 0.0)
+(0, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 9, 'draws': 0}	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION-VALUES: (4, 0.0)
+(0, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+random2 {'wins': 0, 'losses': 9, 'draws': 0}	ACTION: 0
+19:13:21	board_games.base_class.agent	update_record
+random2 {'wins': 0, 'losses': 9, 'draws': 1}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax {'wins': 9, 'losses': 0, 'draws': 1}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
 (6, 1.0)
 (7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 0.0)
 (2, 0.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 2
-17:48:07	board_games.base_class.agent	act
-random2 {'wins': 0, 'losses': 8, 'draws': 1}	ACTION: 7
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION-VALUES: (3, 1.0)
-(6, -1.0)
-17:48:07	board_games.base_class.agent	act
-minimax	ACTION: 6
-17:48:07	board_games.base_class.agent	update_record
-random2 {'wins': 0, 'losses': 9, 'draws': 1}	LOSSED GAME
-17:48:07	board_games.base_class.agent	update_record
-minimax {'wins': 9, 'losses': 0, 'draws': 1}	WON GAME
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 1}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 1}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 2}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 2}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 3}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 3}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 4}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 4}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 5}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 5}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 6}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 6}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 7}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 7}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 8}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 8}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 9}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 9}	DREW GAME
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (0, 0.0)
+(1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(4, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 0
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (1, 1.0)
+(2, 1.0)
+(3, 1.0)
+(4, 0.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 4
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (1, 0.0)
+(2, 0.0)
+(3, 0.0)
+(5, 0.0)
+(6, 0.0)
+(7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 1
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (2, 0.0)
+(3, 1.0)
+(5, 1.0)
+(6, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 2
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (3, -1.0)
+(5, -1.0)
+(6, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 6
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (3, 0.0)
+(5, 1.0)
+(7, 1.0)
+(8, 1.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 3
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (5, 0.0)
+(7, -1.0)
+(8, -1.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 5
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION-VALUES: (7, 0.0)
+(8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax1	ACTION: 7
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION-VALUES: (8, 0.0)
+19:13:21	board_games.base_class.agent	act
+minimax2	ACTION: 8
+19:13:21	board_games.base_class.agent	update_record
+minimax2 {'wins': 0, 'losses': 0, 'draws': 10}	DREW GAME
+19:13:21	board_games.base_class.agent	update_record
+minimax1 {'wins': 0, 'losses': 0, 'draws': 10}	DREW GAME

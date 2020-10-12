@@ -64,6 +64,7 @@ class Game:
         """Query current agent to act. Push action onto board."""
         action = self.current_agent().act(self)
         self._board.append(action)
+        LOGGER.info(self._board._info())
 
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""

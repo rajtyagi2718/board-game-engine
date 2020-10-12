@@ -71,7 +71,7 @@ class TicTacToeBoard(Board):
         self._actions.append(action)
         self._legal_actions.remove(action)
         self.check_winner()
-        LOGGER.info(self._info())
+        # LOGGER.info(self._info())
 
     def pop(self):
         action = self._actions.pop()
@@ -81,7 +81,7 @@ class TicTacToeBoard(Board):
         # turn depends on number of moves
         # decrement hash value after popping from actions
         self._hash_value ^= self.hash_calc(self.turn(), action)
-        LOGGER.info(self._info())
+        # LOGGER.info(self._info())
         return action
 
     def clear(self):

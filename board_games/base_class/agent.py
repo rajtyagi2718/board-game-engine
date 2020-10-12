@@ -100,7 +100,7 @@ class HeuristicAgent(Agent):
             self._weights[game_name] = weights
 
     def act(self, game):
-        """Evaluate legal actions by linear approx of heuristic and weights."""
+        """Evaluate afterstate of each action. Linear appprox most valuable."""
         board = game._board
         actions = game.legal_actions()
         weights = self._weights[game._name]
