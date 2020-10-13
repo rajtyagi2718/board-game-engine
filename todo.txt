@@ -1,6 +1,6 @@
 minimax agent
+  heuristic test weights 
 
-loggers:
-game
-model
-test
+decouple loggers:
+  game, model, test
+  debug, info

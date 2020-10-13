@@ -89,11 +89,11 @@ WEIGHTS_PATH = Path('data/weights/')
 
 class HeuristicAgent(Agent):
 
-    def __init__(self, name):
+    def __init__(self, name, weights_path=WEIGHTS_PATH):
         super().__init__(name)
         self._weights = {}
 
-        for path in WEIGHTS_PATH.iterdir():
+        for path in weights_path.iterdir():
             # 'data/weights/tictactoe.txt' -> 'tictactoe'
             game_name = path.name[:-4]
             weights = np.genfromtxt(path, delimiter='\n', dtype=np.float64)
@@ -117,3 +117,10 @@ class HeuristicAgent(Agent):
         action = actions[argext(values)]
         LOGGER.info('{}\tACTION: {!s}'.format(self._name, action))
         return action
+
+MODELS_WEIGHTS_PATH = Path('models/weights/')
+
+class TrainAgent(HeuristicAgent):
+
+    def __init__(self, name):
+        super().__init__(name, MODELS_WEIGHTS_PATH)
