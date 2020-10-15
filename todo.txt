@@ -1,6 +1,13 @@
 minimax agent
   heuristic test weights 
 
+weights txt to csv
+
 decouple loggers:
-  game, model, test
-  debug, info
+  game
+    debug
+    info
+  model
+  test
+
+restructure dir
