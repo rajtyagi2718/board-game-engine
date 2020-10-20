@@ -240,16 +240,16 @@ class Board(ABC):
 
     # logger interface
 
-    def _info(self):
-        """Return string of state info for logger."""
-        result = 'MOVES: {}\tTURN: {}\tWINNER: {}\tHASH: {}'.format(
-            len(self), self.turn(), self.winner, hash(self))
-        result += '\nBOARD:\n{!s}'.format(self)
-        return result
+    def debug(self):
+        """Return string of state information for debug logger."""
+        result = 'ACTION {!s}\nMOVES {}\tTURN {}\tWINNER {}\tHASH {}'
+        result += '\nBOARD\n{!s}'
+        return result.format(
+            self[-1], len(self), self.turn(), self.winner, hash(self), self)
 
-    def _debug(self):
-        """Return string of state debug for logger. More detailed than info."""
-        return ''
+    @abstractmethod
+    def info(self):
+        """Return action indices for info logger."""
 
     # agent interface
 

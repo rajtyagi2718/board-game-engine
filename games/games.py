@@ -4,20 +4,20 @@ from games.game import Game
 GAMES = {}
 
 def GameFactory(name, gameclsname, boardcls):
-    """Return game cls derived from Game.
+    """Return game cls derived from Game base class.
 
     GameFactory('tictactoe', 'TicTacToeGame', TicTacToeBoard) 
     equivalent to
     
     class TicTacToeGame(Game):
 
-        def __init__(self, agent1, agent):
+        def __init__(self, agent1, agent2):
             super().__init__(name, TicTacToeBoard(), agent1, agent2)
 
     """
 
     def __init__(self, agent1, agent2):
-        Game().__init__(self, name, boardcls(), agent1, agent2)
+        Game.__init__(self, name, boardcls(), agent1, agent2)
 
     gamecls = type(gameclsname, (Game,), {'__init__' : __init__})
     return gamecls
@@ -26,8 +26,12 @@ def GameFactory(name, gameclsname, boardcls):
 # GAMES['tictactoe'] = TicTacToeGame
 for name, boardcls in BOARDS.items():
     # 'TicTacToeBoard' -> 'TicTacToe'
-    gameclsname = boardcls.__name__[:-5] += 'Game'
+    gameclsname = boardcls.__name__[:-5] + 'Game'
     gamecls = GameFactory(name, gameclsname, boardcls)
 
     # register gamecls with name in GAMES
     GAMES[name] = gamecls
+
+
+if __name__ == '__main__':
+    pass

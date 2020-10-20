@@ -253,7 +253,7 @@ class GoBoard(Board):
         action = Action(action, tuple(adjs), join, tuple(captures))
         self._actions.append(action)
         self.check_winner()
-        LOGGER.info(self._info())
+        LOGGER.info(self.info())
 
     def _undo_capture(self, capture):
         for i, component, liberty in zip(capture.indices, capture.components, 
@@ -281,7 +281,7 @@ class GoBoard(Board):
         action = self._actions.pop()
         if action is None:
             self.winner = None 
-            LOGGER.info(self._info())
+            LOGGER.info(self.info())
             return
 
         assert isinstance(action, Action), 'last action %s' % str(action)
@@ -299,7 +299,7 @@ class GoBoard(Board):
         self._legal_actions.add(action.action)
 
         self._hash_value ^= self.hash_calc(self.turn(), action.action)
-        LOGGER.info(self._info())
+        LOGGER.info(self.info())
         return action.action
 
     def clear(self):
@@ -340,9 +340,11 @@ class GoBoard(Board):
         result += '/'*23
         return result
 
-    def _debug(self):
-        action = 'ACTION: {!s}'.format(self[-1])
+    def debug(self):
         groups = str(self._groups)
         groups = '\n'.join((' '.join(groups[i:i+9]) for i in range(0, 81, 9)))
-        groups = 'COMPONENTS:\n%s' % (groups)
-        return action + '\n' + groups
+        groups = 'COMPONENTS\n{}'.format(groups)
+        return super().debug() + groups 
+
+    def info(self):
+        return [action.action for action in self._actions] 

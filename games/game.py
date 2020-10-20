@@ -18,17 +18,6 @@ class Game:
         self._agent1 = agent1
         self._agent2 = agent2
 
-    def __repr__(self):
-        """Return name - agent1 - agent2 - board.
-
-        Return
-        ------
-        str
-
-        """
-        return (self._name + ': ' + str(self._agent1) + ' vs ' + 
-                str(self._agent2) + '\n' + str(self._board))
-
     def legal_actions(self):
         """Return all possible legal actions for current agent.
 
@@ -63,14 +52,16 @@ class Game:
     def step(self):
         """Query current agent to act. Push action onto board."""
         action = self.current_agent().act(self)
+        LOGGER.debug(self.current_agent().debug(action)) 
         self._board.append(action)
-        LOGGER.info(self._board._info())
+        LOGGER.debug(self._board.debug())
 
     def run(self):
         """Take steps until board is terminal. Return winner: 0, 1, or 2."""
         while self._board:
             self.step()
         self._update_records()
+        LOGGER.info(self.info())
         return self._board.winner
 
     def _update_records(self):
@@ -92,21 +83,38 @@ class Game:
     def swap_agents(self):
         self._agent1, self._agent2 = self._agent2, self._agent1
 
-    def runs(self, num_runs):
-        LOGGER.info(self._info())
-        for r in range(num_runs):
-            LOGGER.info('GAMES: {}'.format(r))
+    def runs(self, num_runs, index_offset=1):
+        LOGGER.info('AGENT1 {!s}\nAGENT2 {!s}'.format(
+            self._agent1, self._agent2))
+        for r in range(index_offset, num_runs + index_offset):
+            LOGGER.info('RUN {}'.format(r))
             self.clear()
             self.run()
 
     def compete(self, num_runs):
         """Run game num_runs times. Swap who goes first halfway through."""
+        LOGGER.info('GAME {!r}\nNUM RUNS {}'.format(self, num_runs))
         m = num_runs // 2
         self.runs(m)
         self.swap_agents()
-        self.runs(num_runs-m)
+        self.runs(num_runs-m, index_offset=m+1)
         self.swap_agents()
+        log_info = 'GAME {!r}\nNUM RUNS {} complete!'
+        log_info += '\nRESULTS\nAGENT1 {}\nAGENT2 {}'
+        LOGGER.info(log_info.format(self, num_runs, self._agent1, self._agent2))
 
-    def _info(self):
-        return 'GAME: {!s}\nAGENT1: {!s}\nAGENT2: {!s}'.format(
+    def __repr__(self):
+        """Return name - agent1 - agent2 - board.
+
+        Return
+        ------
+        str
+
+        """
+        return '{} : {!s} vs {!s}'.format(
             self._name, self._agent1, self._agent2)
+
+    def info(self):
+        """Return board history for info logger."""
+        return 'ACTIONS {}\nWINNER {}\nAGENT1 {!r}\nAGENT2 {!r}'.format(
+            self._board.info(), self._board.winner, self._agent1, self._agent2)

@@ -84,7 +84,7 @@ class ConnectFourBoard(Board):
         self._actions.append(action)
         self._indices.append(ind)
         self.check_winner()
-        LOGGER.info(self._info())
+        LOGGER.info(self.info())
 
     def pop(self):
         action = self._actions.pop()
@@ -95,7 +95,7 @@ class ConnectFourBoard(Board):
         # turn depends on number of moves
         # decrement hash value after popping from actions
         self._hash_value ^= self.hash_calc(self.turn(), index)
-        LOGGER.info(self._info())
+        LOGGER.info(self.info())
         return action
 
     def clear(self):
@@ -129,3 +129,6 @@ class ConnectFourBoard(Board):
             result += line + '\n'
         result += '/'*19
         return result
+
+    def info(self):
+        return self._indices

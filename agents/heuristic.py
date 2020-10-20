@@ -1,7 +1,7 @@
-from agents.agent import Agent
-from logs.log import get_logger
+from pathlib import Path
+import numpy as np
 
-LOGGER = get_logger(__name__)
+from agents.agent import Agent
 
 WEIGHTS_PATH = Path('data/weights/')
 
@@ -30,8 +30,5 @@ class HeuristicAgent(Agent):
             values[i] = weights @ board.heuristic()
             board.pop()
 
-        LOGGER.info('{}\tACTION-VALUES: {!s}'.format(self._name, 
-            '\n'.join(str(av) for av in zip(actions, values))))
         action = actions[argext(values)]
-        LOGGER.info('{}\tACTION: {!s}'.format(self._name, action))
         return action

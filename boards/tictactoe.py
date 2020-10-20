@@ -113,6 +113,11 @@ class TicTacToeBoard(Board):
         result += '/'*11
         return result
 
+    # logger interface
+
+    def info(self):
+        return self._actions
+
     # agent interface
 
     _symm_scalars = np.geomspace(1, 3**8, 9, dtype=np.int16)

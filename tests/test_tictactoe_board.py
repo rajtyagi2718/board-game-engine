@@ -1,6 +1,7 @@
 import unittest
 import random
-from board_games.tictactoe.board import TicTacToeBoard
+
+from boards.tictactoe import TicTacToeBoard
 
 class TicTacToeBoardTestCase(unittest.TestCase):
 
@@ -100,20 +101,12 @@ class TicTacToeBoardTestCase(unittest.TestCase):
                     '022211112',
                     '122211112']
                   ]
-        hashes = [[int(s, 3) for s in game] for game in strings]
 
-        for acts, blns, wins, hshs in zip(actions, bools, winners, hashes):
-            with self.subTest(acts=acts, blns=blns, wins=wins, hshs=hshs):
-                for a, b, w, h in zip(acts, blns, wins, hshs):
-                    with self.subTest(a=a, b=b, w=w, h=h):
+        for acts, blns, wins in zip(actions, bools, winners):
+            with self.subTest(acts=acts, blns=blns, wins=wins):
+                for a, b, w in zip(acts, blns, wins):
+                    with self.subTest(a=a, b=b, w=w):
                         self.board.append(a)
                         self.assertEqual(b, bool(self.board))
                         self.assertEqual(w, self.board.winner)
-                        self.assertEqual(h, hash(self.board))
             self.board.clear()
-
-    def test_repr(self):
-        print(repr(self.board))
-
-    def test_str(self):
-        print(self.board)

@@ -8,21 +8,18 @@ LOGFORMATTER = logging.Formatter(
     fmt='%(asctime)s\t%(name)s\t%(funcName)s\n%(message)s', 
     datefmt='%H:%M:%S')
 
-# configure root logger
-LOGGER = logging.getLogger()
-LOGGER.setLevel(logging.DEBUG)
-_handler = RotatingFileHandler(
-    LOGDIR / 'log.txt', 'w', maxBytes=10*1024*1024, backupCount=5)
-_handler.setFormatter(LOGFORMATTER)
-LOGGER.addHandler(_handler)
-del _handler
-
-def get_logger(name, level=logging.INFO):
-    """Return logger instance with file handler and formatter."""
+def get_logger(name):
+    """Return logger instance with two file handlers and global formatter."""
     logger = logging.getLogger(name)
-    logger.setLevel(level) 
-    handler = RotatingFileHandler(
-        LOGDIR / (name + '.txt'), 'w', maxBytes=10*1024*1024, backupCount=5)
-    handler.setFormatter(LOGFORMATTER)
-    logger.addHandler(handler)
+    logger.setLevel(logging.DEBUG) 
+    handler_debug = RotatingFileHandler(
+        LOGDIR/(name+'.debug.txt'), 'w', maxBytes=10*1024*1024, backupCount=5)
+    handler_info = RotatingFileHandler(
+        LOGDIR/(name+'.info.txt'), 'w', maxBytes=10*1024*1024, backupCount=5)
+    handler_debug.setFormatter(LOGFORMATTER)
+    handler_info.setFormatter(LOGFORMATTER)
+    handler_debug.setLevel(logging.DEBUG)
+    handler_info.setLevel(logging.INFO)
+    logger.addHandler(handler_debug)
+    logger.addHandler(handler_info)
     return logger

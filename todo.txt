@@ -10,4 +10,26 @@ decouple loggers:
   model
   test
 
+game debug
+  game info
+  agent action, no record  
+  board str
+
+game info
+  game name, vs, no record 
+  runs started, num runs
+  run number
+  game winner
+  board actions
+  agent records
+
+board debug
+
+test debug
+
+model debug
+
+model info
+
+
 restructure dir

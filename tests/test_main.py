@@ -6,7 +6,7 @@ import unittest
 # from tests.test_game import GameTestCase
 # from tests.test_go_game import GoGameTestCase 
 # from tests.test_go_utils import DisjointSetTestCase
-from tests.test_agent import AgentTestCase
+# from tests.test_agent import AgentTestCase
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,26 +1,20 @@
-import logging
+from pathlib import Path
 import unittest
 import random
 import copy
 import numpy as np
-from pathlib import Path
 from collections import deque
 
-from board_games.tictactoe.game import TicTacToeGame
-from board_games.connectfour.game import ConnectFourGame
-from board_games.checkers.game import CheckersGame
-from board_games.go.game import GoGame
-from board_games.base_class.agent import RandomAgent
+from games.games import GAMES
+from agents.random import RandomAgent
 from logs.log import get_logger
 
-LOGGER = get_logger(__name__, logging.DEBUG)
-
-GAMES = [TicTacToeGame, ConnectFourGame, CheckersGame, GoGame]
+LOGGER = get_logger(__name__)
 
 class GameTestCase(unittest.TestCase):
 
     def test_compete(self):
-        for Game in GAMES:
+        for Game in GAMES.values():
             with self.subTest(game=Game.__name__):
                 game = Game(RandomAgent('random1'), RandomAgent('random2'))
                 game.compete(10)
@@ -32,7 +26,7 @@ class GameTestCase(unittest.TestCase):
                                  game._agent2._record['draws'])
 
     def test_undo(self):
-        for Game in GAMES:
+        for Game in GAMES.values():
             with self.subTest(game=Game.__name__):
                 GameUndo = GameUndoFactory(Game)
                 game = GameUndo(self,
@@ -67,11 +61,11 @@ def GameUndoFactory(Game):
                        for attr in board1.__dict__)
 
         def runs(self, num_runs, step_prob, cache_size):
-            msg='STEP PROB: {}\tCACHE SIZE: {}'.format(step_prob, cache_size)
-            LOGGER.debug(self._debug() + '\n' + msg)
-            for r in range(num_runs):
+            msg='STEP PROB {}\tCACHE SIZE {}'.format(step_prob, cache_size)
+            LOGGER.debug(self.debug() + '\n' + msg)
+            for r in range(1, num_runs+1):
                 with self._test_case.subTest(game_num=r):
-                    LOGGER.info('GAMES: {}'.format(r))
+                    LOGGER.info('RUN {}'.format(r))
                     self.clear()
                     self.run(step_prob, cache_size)
 
@@ -79,7 +73,7 @@ def GameUndoFactory(Game):
             self._board_cache.clear()
             while self._board:
                 with self._test_case.subTest(move_num=len(self._board)):
-                    LOGGER.info('MOVES: {}'.format(len(self._board)))
+                    LOGGER.info('MOVE {}'.format(len(self._board) + 1))
                     if random.random() < step_prob or not len(self._board):
                         self._board_cache.append(copy.deepcopy(self._board))
                         if len(self._board_cache) > cache_size:
@@ -114,8 +108,8 @@ def GameUndoFactory(Game):
             msg += '\nBOARD CACHE:'
             self._board_cache.append(cached)
             for board in self._board_cache:
-                msg += '\n\n{!s}'.format(board._debug())
-            msg += '\n\nBOARD UNDO:\n{!s}'.format(self._board._debug())
+                msg += '\n\n{!s}'.format(board.debug())
+            msg += '\n\nBOARD UNDO:\n{!s}'.format(self._board.debug())
             hashes = [hash(board) 
                       for board in self._board_cache]
             hashes.append(last_hash)

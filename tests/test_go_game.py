@@ -1,13 +1,13 @@
-from board_games.go.game import GoGame
-from board_games.base_class.agent import RandomAgent, TestAgent
-from logs.log import get_logger
-
-import logging
 import unittest
 import random
 from collections import namedtuple
 
-LOGGER = get_logger(__name__, logging.DEBUG)
+from logs.log import get_logger
+from games.games import GAMES['go'] as GoGame
+from agents.random import RandomAgent
+from tests.agent import TestAgent
+
+LOGGER = get_logger(__name__)
 
 class GoGameTestCase(unittest.TestCase):
 
@@ -44,24 +44,22 @@ class GoGameTestCase(unittest.TestCase):
             with self.subTest(capture_name=name):
                 game = GoGame(TestAgent('test1', actions1), 
                               TestAgent('test2', actions2))
-                LOGGER.debug('CAPTURE SEQUENCE: ' + name)
+                LOGGER.debug('CAPTURE SEQUENCE {}'.format(name))
                 game.clear()
-                for _ in range(len(actions1) + len(actions2)):
-                    with self.subTest(move_num=len(game._board)):
+                for m in range(1, len(actions1) + len(actions2) + 1):
+                    with self.subTest(move_num=m):
                         game.step() 
-                        LOGGER.debug(game._board._debug())
                         self._test_legal_state(game)
 
     def test_compete_legal_state(self):
         game = GoGame(RandomAgent('random1'), RandomAgent('random2'))
-        for game_num in range(10):
+        for game_num in range(1, 11):
             with self.subTest(game_num=game_num):
-                LOGGER.debug('GAMES: {}'.format(game_num))
+                LOGGER.debug('GAME {}'.format(game_num))
                 game.clear()
                 while game._board:
                     with self.subTest(move_num=len(game._board)):
                         game.step()
-                        LOGGER.debug(game._board._debug())
                         self._test_legal_state(game)
 
     def test_repeated_state(self):
@@ -101,20 +99,19 @@ class GoGameTestCase(unittest.TestCase):
 
         for name, actions1, actions2, illegal in repeated_sequences:
             with self.subTest(repeated_name=name):
-                LOGGER.debug('REPEATED SEQUENCE: ' + name)
+                LOGGER.debug('REPEATED SEQUENCE {}'.format(name))
                 game = GoGame(TestAgent('test1', actions1), 
                               TestAgent('test2', actions2))
                 game.clear()
                 for _ in range(len(actions1) + len(actions2) - 1):
                     game.step() 
-                    LOGGER.debug(game._board._debug())
                 if illegal:
                     try:
                         game.step()
                     except AssertionError:
                         continue    
-                    LOGGER.debug('ILLEGAL REPEATED STATE\n' +
-                                 game._board._debug())
+                    LOGGER.debug('ILLEGAL REPEATED STATE\n{}'.format(
+                                 game._board.debug())
                     self.assertTrue(False, 'illegal repeated state')
                     break 
                 else:
@@ -123,7 +120,7 @@ class GoGameTestCase(unittest.TestCase):
                     except AssertionError:
                         with self.logger_file_path.open('a') as f:
                             LOGGER.debug('LEGAL REPEATED STATE\n' +
-                                         game._board._debug())
+                                         game._board.debug())
                         self.assertTrue(False, 'legal repeated state')
                         break 
         
@@ -135,9 +132,9 @@ class GoGameTestCase(unittest.TestCase):
             # components same
             if dfs != grp:
                 msg = 'ILLEGAL STATE'
-                msg += '\nACTIONS: {!s}'.format(list(game._board))
-                msg += '\nDFS INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s' % dfs
-                msg += '\nGRP INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s' % grp
+                msg += '\nACTIONS {!s}'.format(list(game._board))
+                msg += '\nDFS INDEX %s\nCOMPONENT %s \nLIBERTIES %s' % dfs
+                msg += '\nGRP INDEX %s\nCOMPONENT %s \nLIBERTIES %s' % grp
                 LOGGER.debug(msg)
                 self.assertTrue(False, 'different components')
 
@@ -146,8 +143,8 @@ class GoGameTestCase(unittest.TestCase):
             if not liberties and game._board._board[next(iter(component))]:
                 with self.logger_file_path.open('a') as f:
                     msg = 'ILLEGAL STATE'
-                    msg += '\nDFS INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s'%dfs
-                    msg += '\nGRP INDEX: %s\nCOMPONENT: %s \nLIBERTIES: %s'%grp
+                    msg += '\nDFS INDEX %s\nCOMPONENT %s \nLIBERTIES %s'%dfs
+                    msg += '\nGRP INDEX %s\nCOMPONENT %s \nLIBERTIES %s'%grp
                     LOGGER.debug(msg)
                 self.assertTrue(False, 'captured component')
 
