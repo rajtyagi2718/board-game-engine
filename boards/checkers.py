@@ -1,9 +1,7 @@
+import numpy as np
 from collections import namedtuple
 
 from boards.board import get_winners, get_hashes, boards, Board
-from logs.log import get_logger
-
-LOGGER = get_logger(__name__)
 
 """
 indices
@@ -328,8 +326,6 @@ class CheckersBoard(Board):
         for piece in range(1, 5):
             for index in self._indices[piece]:
                 assert self._board[index] == piece
-
-        LOGGER.info(self.info())
          
     def pop(self): 
         self.winner = None
@@ -350,8 +346,6 @@ class CheckersBoard(Board):
         if action.promotion:
             piece -= 2
         self._add_piece(piece, action.start)
-
-        LOGGER.info(self.info())
 
         return action
 
@@ -396,6 +390,8 @@ class CheckersBoard(Board):
         result += '/'*21
         return result
 
+    # logger interface
+
     def info(self):
         return [self._action_str(action) for action in self]
 
@@ -408,3 +404,9 @@ class CheckersBoard(Board):
         else: # isinstance(action, Path)
             capture = action.captures
         return (action.start, action.stop, capture)
+
+    # agent interface
+
+    def heuristic(self):
+        # TODO: actual heuristic
+        return np.zeros(19557, dtype=np.bool)

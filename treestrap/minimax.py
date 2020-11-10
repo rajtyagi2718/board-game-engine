@@ -3,18 +3,13 @@ from pathlib import Path
 from operator import lt, gt
 import sys
 
+from boards.boards import BOARDS
+
 from logs.log import get_logger
-from board_games.tictactoe.board import TicTacToeBoard
-from board_games.connectfour.board import ConnectFourBoard
-from board_games.checkers.board import CheckersBoard
-from board_games.go.board import GoBoard
 
 np.set_printoptions(threshold=sys.maxsize)
 
 LOGGER = get_logger(__name__)
-
-BOARDS = dict(zip('tictactoe connectfour checkers go'.split(' '),
-                  (TicTacToeBoard, ConnectFourBoard, CheckersBoard, GoBoard)))
 
 WEIGHTS_PATHS = {name : Path('models/weights/' + name + '.txt')
                  for name in BOARDS}

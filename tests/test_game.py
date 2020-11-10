@@ -89,7 +89,7 @@ def GameUndoFactory(Game):
 
                     cached = self._board_cache.pop()
                     if not self._board_eq_attrs(cached, self._board):
-                        LOGGER.debug(self._debug_failed_undo_step(
+                        LOGGER.debug(self.debug_failed_undo_step(
                             last_action, last_hash))
                         self._test_case.assertTrue(False,'undo failed')
                         break
@@ -97,9 +97,9 @@ def GameUndoFactory(Game):
             self._update_records() 
             return self._board.winner
 
-        def _debug_failed_undo_step(last_action, last_hash):
+        def debug_failed_undo_step(last_action, last_hash):
             """Return debug message with board cache details."""
-            msg = '\n\n' + self._debug()
+            msg = '\n\n' + self.debug()
             msg += '\nFAILED UNDO'
             actions = list(self._board) + [last_action]
             actions = '\n'.join('%d: %s' % (i, x) 
@@ -118,7 +118,7 @@ def GameUndoFactory(Game):
             msg += '\n\nHASH ARRAY:\n{!s}'.format(self._board._hashes)
             return msg
 
-        def _debug(self):
+        def debug(self):
             return 'GAME UNDO: {!r}'.format(self)
 
     return GameUndo

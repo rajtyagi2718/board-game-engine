@@ -10,7 +10,7 @@ _handler.setFormatter(_formatter)
 LOGGER.addHandler(_handler)
 del _formatter, _handler
 
-KEEP = ('log.py', 'clean.py')
+KEEP = ('log.py', 'clean.py', '__init__.py')
 
 PARSER = argparse.ArgumentParser(description='Remove log files.')
 PARSER.add_argument('--verbose', '-v', 

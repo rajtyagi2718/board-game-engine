@@ -2,12 +2,14 @@ import unittest
 import random
 from collections import namedtuple
 
-from logs.log import get_logger
-from games.games import GAMES['go'] as GoGame
+from games.games import GAMES
 from agents.random import RandomAgent
 from tests.agent import TestAgent
+from logs.log import get_logger
 
 LOGGER = get_logger(__name__)
+
+GoGame = GAMES['go']
 
 class GoGameTestCase(unittest.TestCase):
 
@@ -111,7 +113,7 @@ class GoGameTestCase(unittest.TestCase):
                     except AssertionError:
                         continue    
                     LOGGER.debug('ILLEGAL REPEATED STATE\n{}'.format(
-                                 game._board.debug())
+                                 game._board.debug()))
                     self.assertTrue(False, 'illegal repeated state')
                     break 
                 else:
@@ -119,8 +121,8 @@ class GoGameTestCase(unittest.TestCase):
                         game.step()
                     except AssertionError:
                         with self.logger_file_path.open('a') as f:
-                            LOGGER.debug('LEGAL REPEATED STATE\n' +
-                                         game._board.debug())
+                            LOGGER.debug('LEGAL REPEATED STATE\n{}'.format(
+                                         game._board.debug()))
                         self.assertTrue(False, 'legal repeated state')
                         break 
         

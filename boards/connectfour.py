@@ -1,7 +1,6 @@
-from boards.board import get_winners, get_hashes, boards, Board
-from logs.log import get_logger
+import numpy as np
 
-LOGGER = get_logger(__name__)
+from boards.board import get_winners, get_hashes, boards, Board
 
 """
 indices
@@ -84,7 +83,6 @@ class ConnectFourBoard(Board):
         self._actions.append(action)
         self._indices.append(ind)
         self.check_winner()
-        LOGGER.info(self.info())
 
     def pop(self):
         action = self._actions.pop()
@@ -95,7 +93,6 @@ class ConnectFourBoard(Board):
         # turn depends on number of moves
         # decrement hash value after popping from actions
         self._hash_value ^= self.hash_calc(self.turn(), index)
-        LOGGER.info(self.info())
         return action
 
     def clear(self):
@@ -130,5 +127,13 @@ class ConnectFourBoard(Board):
         result += '/'*19
         return result
 
+    # logger interface
+
     def info(self):
         return self._indices
+
+    # agent interface
+
+    def heuristic(self):
+        # TODO: actual heuristic
+        return np.zeros(19557, dtype=np.bool)

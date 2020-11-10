@@ -45,7 +45,7 @@ class Game:
         Agent
 
         """
-        if self.board.other() == 1:
+        if self._board.other() == 1:
             return self._agent1
         return self._agent2
 
@@ -100,7 +100,7 @@ class Game:
         self.runs(num_runs-m, index_offset=m+1)
         self.swap_agents()
         log_info = 'GAME {!r}\nNUM RUNS {} complete!'
-        log_info += '\nRESULTS\nAGENT1 {}\nAGENT2 {}'
+        log_info += '\nRESULTS\nAGENT1 {!r}\nAGENT2 {!r}\n'
         LOGGER.info(log_info.format(self, num_runs, self._agent1, self._agent2))
 
     def __repr__(self):
@@ -116,5 +116,10 @@ class Game:
 
     def info(self):
         """Return board history for info logger."""
-        return 'ACTIONS {}\nWINNER {}\nAGENT1 {!r}\nAGENT2 {!r}'.format(
-            self._board.info(), self._board.winner, self._agent1, self._agent2)
+        winner = self._board.winner
+        result = 'ACTIONS {}\nWINNER {} '.format(self._board.info(), winner)
+        if winner:
+            result += str(self.other_agent())
+        else:
+            result += 'draw'
+        return result

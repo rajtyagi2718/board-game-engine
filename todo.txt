@@ -23,8 +23,6 @@ game info
   board actions
   agent records
 
-board debug
-
 test debug
 
 model debug
